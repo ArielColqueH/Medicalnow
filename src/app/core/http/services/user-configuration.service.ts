@@ -21,13 +21,14 @@ export class UserConfigurationService {
 }
 
 
-  public datosActualizadosFromRemote(user: UserConfigurationModel):Observable<any>{
+  datosActualizadosFromRemote(user: UserConfigurationModel):Observable<any>{
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
     Authorization: "bearer " + tokenUser,
   });
-    return this._http.put(`${config.apiUrl}/user/config/update/`+localStorage.getItem("userId"),{
+    return this._http.put<UserConfigurationModel>(`${config.apiUrl}/user/config/update/`+localStorage.getItem("userId"),{
       headers: reqHeader,
+      user 
     });
   }
 

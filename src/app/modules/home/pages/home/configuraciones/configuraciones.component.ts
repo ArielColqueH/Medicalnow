@@ -32,7 +32,7 @@ export class ConfiguracionesComponent implements OnInit {
 
  
 
-  datosActualizados(){
+  datosActualizados(datos:UserConfigurationModel){
     this._service.datosActualizadosFromRemote(this.datos).subscribe(
       (data) => {
         console.log("actualizados");
