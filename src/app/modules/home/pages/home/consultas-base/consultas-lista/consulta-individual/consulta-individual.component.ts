@@ -1,19 +1,22 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material";
 
 @Component({
-  selector: "app-mensaje-a-especialista",
-  templateUrl: "./mensaje-a-especialista.component.html",
-  styleUrls: ["./mensaje-a-especialista.component.scss"],
+  selector: "app-consulta-individual",
+  templateUrl: "./consulta-individual.component.html",
+  styleUrls: ["./consulta-individual.component.scss"],
 })
-export class MensajeAEspecialistaComponent implements OnInit {
+export class ConsultaIndividualComponent implements OnInit {
   fileToUpload: File = null;
   nombre: string = "";
   Url: string = "";
   tipoArchivo: string = "";
   nombreArchivo: string = "";
-  constructor() {}
+
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
+
   handleFileInput(file: FileList) {
     this.fileToUpload = null;
     this.nombreArchivo = "";

@@ -25,27 +25,19 @@ export class ConfiguracionesComponent implements OnInit {
   }
 
   Obtenerdatos() {
-    this._service
-      .obtenerDatosConfiguration()
-      .subscribe((data) => (this.usuario = data));
+    // this._service
+    //   .obtenerDatosConfiguration()
+    //   .subscribe((data) => (this.usuario = data));
   }
 
- 
-
-  datosActualizados(){
-    this._service.datosActualizadosFromRemote(this.usuario).subscribe(
-      (data) => {
-        console.log("actualizados");
-        
-      },
-      (error) => {
-        console.log("exception ocurred");
-      }
-    )
-    }
-  /* @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
-  }*/
-
+  datosActualizados() {
+    // this._service.datosActualizadosFromRemote(this.datos).subscribe(
+    //   (data) => {
+    //     console.log("actualizados");
+    //   },
+    //   (error) => {
+    //     console.log("exception ocurred");
+    //   }
+    // )
+  }
 }

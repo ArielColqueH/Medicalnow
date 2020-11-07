@@ -27,14 +27,13 @@ export class AsistenciaMedicaComponent implements OnInit {
   }
   irMedicoGeneral() {
     console.log("medico general");
+    this._router.navigate(["lista-especialidades/lista-especialistas/4"], {
+      relativeTo: this.route,
+    });
   }
+
   irMedicoEspecialista() {
     console.log("especialista");
     this._router.navigate(["lista-especialidades"], { relativeTo: this.route });
-  }
-
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
   }
 }

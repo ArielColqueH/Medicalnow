@@ -36,6 +36,9 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { HistorialBaseComponent } from "./pages/home/historial-base/historial-base.component";
 import { HistorialListaComponent } from "./pages/home/historial-base/historial-lista/historial-lista.component";
 import { HistorialCompletoComponent } from "./pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
+import { ConsultasBaseComponent } from "./pages/home/consultas-base/consultas-base.component";
+import { ConsultasListaComponent } from "./pages/home/consultas-base/consultas-lista/consultas-lista.component";
+import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consultas-lista/consulta-individual/consulta-individual.component";
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { HistorialCompletoComponent } from "./pages/home/historial-base/historia
     HistorialBaseComponent,
     HistorialListaComponent,
     HistorialCompletoComponent,
+    ConsultasBaseComponent,
+    ConsultasListaComponent,
+    ConsultaIndividualComponent,
   ],
   imports: [
     CommonModule,

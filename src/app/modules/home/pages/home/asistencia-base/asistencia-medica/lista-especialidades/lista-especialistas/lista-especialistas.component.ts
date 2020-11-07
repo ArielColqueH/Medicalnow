@@ -4,9 +4,10 @@ import { SpecialtieslistService } from "src/app/core/http/services/specialtiesli
 import { DoctorSpecialtyModel } from "src/app/models/doctor-specialty-model";
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
 import { MatDialog } from "@angular/material/dialog";
-import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a-especialista/mensaje-a-especialista.component";
+
 import { SpecialtyModel } from "src/app/models/specialty-model";
 import { HostListener } from "@angular/core";
+import { DoctorSpecialtyJson } from "src/app/models/DoctorSpecialtyJson";
 
 @Component({
   selector: "app-lista-especialistas",
@@ -28,9 +29,8 @@ export class ListaEspecialistasComponent implements OnInit {
       specialist_score: 4.8,
     },
   ];*/
-  nombreEspecialidad: SpecialtyModel;
 
-  listaEspecialista: DoctorSpecialtyModel[] = [];
+  listaEspecialista = new DoctorSpecialtyJson();
   id: string = "";
 
   constructor(
@@ -41,7 +41,6 @@ export class ListaEspecialistasComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //this.nombreEspecialidad = this.listaEspecialista[0].specialtyName;
     this.ObtenerDatos();
   }
 
@@ -51,18 +50,10 @@ export class ListaEspecialistasComponent implements OnInit {
       .listSpecialties(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.listaEspecialista = data));
   }
-  openDialog() {
-    const dialogRef = this.dialog.open(MensajeAEspecialistaComponent, {
-      width: "600px",
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
+  enviarMensaje() {
+    console.log("go messages");
+    this._router.navigate([
+      "consultas/" + localStorage.getItem("userId") + "/consulta-individual",
+    ]);
   }
 }

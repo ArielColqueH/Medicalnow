@@ -16,6 +16,16 @@
   <a
     class="link"
     mat-list-item
+    (click)="irALink('consultas')"
+    routerLink="/consultas"
+    routerLinkActive="list-item-active-link"
+  >
+    <mat-icon class="link__icon">chat</mat-icon
+    ><span class="link__text">Consultas</span>
+  </a>
+  <a
+    class="link"
+    mat-list-item
     routerLinkActive="list-item-active-link"
     routerLink="/recetas"
     (click)="irALink('recetas')"

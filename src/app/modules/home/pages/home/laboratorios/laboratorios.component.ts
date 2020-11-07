@@ -38,13 +38,9 @@ export class LaboratoriosComponent implements OnInit {
   }
 
   ObtenerDatos() {
-    this._service
-      .listLaboratory()
-      .subscribe((data) => (this.listlaboratory = data));
-    this.aux = this.listlaboratory;
-  }
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
+    // this._service
+    //   .listLaboratory()
+    //   .subscribe((data) => (this.listlaboratory = data));
+    // this.aux = this.listlaboratory;
   }
 }

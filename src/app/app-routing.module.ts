@@ -8,6 +8,9 @@ import { ListaEspecialidadesComponent } from "./modules/home/pages/home/asistenc
 import { ListaEspecialistasComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialistas/lista-especialistas.component";
 
 import { ConfiguracionesComponent } from "./modules/home/pages/home/configuraciones/configuraciones.component";
+import { ConsultasBaseComponent } from "./modules/home/pages/home/consultas-base/consultas-base.component";
+import { ConsultaIndividualComponent } from "./modules/home/pages/home/consultas-base/consultas-lista/consulta-individual/consulta-individual.component";
+import { ConsultasListaComponent } from "./modules/home/pages/home/consultas-base/consultas-lista/consultas-lista.component";
 import { HistorialBaseComponent } from "./modules/home/pages/home/historial-base/historial-base.component";
 import { HistorialCompletoComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
 import { HistorialListaComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-lista.component";
@@ -22,7 +25,6 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: "registro",
@@ -77,6 +79,26 @@ const routes: Routes = [
               {
                 path: "",
                 component: HistorialCompletoComponent,
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        path: "consultas/:id",
+        component: ConsultasBaseComponent,
+        children: [
+          {
+            path: "",
+            component: ConsultasListaComponent,
+          },
+          {
+            path: "consulta-individual",
+            children: [
+              {
+                path: "",
+                component: ConsultaIndividualComponent,
               },
             ],
           },

@@ -67,27 +67,6 @@
       </mat-form-field>
 
       <mat-form-field class="modal-container__inputs--width">
-        <mat-label>CI</mat-label>
-        <input
-          class="input-form"
-          matInput
-          placeholder="Numero de Celular"
-          [(ngModel)]="user.idNumber"
-          name="celular"
-        />
-        <mat-icon matSuffix class="modal-container__icon">local_phone</mat-icon>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" class="modal-container__inputs--width">
-        <mat-label>Ciudad</mat-label>
-        <mat-select [(ngModel)]="user.city" name="food">
-          <mat-option *ngFor="let ciudad of ciudad_combo" [value]="ciudad">
-            {{ ciudad }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="modal-container__inputs--width">
         <mat-label>Correo Electronico</mat-label>
         <input
           class="input-form"
@@ -113,15 +92,12 @@
         <mat-icon matSuffix class="modal-container__icon">https</mat-icon>
       </mat-form-field>
       <div class="modal-container__button">
-        <button
-          mat-raised-button
-          class="button__large-button">
+        <button mat-raised-button class="button__large-button">
           Registrar
         </button>
       </div>
     </form>
 
-    
     <div class="modal-container__underline">
       Ya tienes cuenta?
       <span

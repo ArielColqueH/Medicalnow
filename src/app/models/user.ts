@@ -1,16 +1,11 @@
 export class User {
-    idUser:number;
-    idNumber:number;
-    firstName:string;
-    firstSurname:string;
-    secondSurname:number;
-    birthDate:string;
-    city: string;
-    email: string;
-    password: string;
-    phoneNumber:number;
-    constructor(){
-        
-        }
-}
+  firstName: string;
+  firstSurname: string;
+  secondSurname: string;
+  birthDate: string;
+  email: string;
+  password: string;
+  phoneNumber: string;
+  constructor() {}
 
+}

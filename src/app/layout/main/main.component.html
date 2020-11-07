@@ -12,9 +12,7 @@
             mat-fab
             [matMenuTriggerFor]="usermodal"
           >
-          <span  class="avatar__first-word">{{
-            avatar.firstLetter
-          }}</span>
+            <span class="avatar__first-word">{{ avatar.firstLetter }}</span>
           </button>
           <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
             <div class="user-card__content">
@@ -23,12 +21,12 @@
                   avatar.firstLetter
                 }}</span>
               </button>
-              <span class="user-card__name">{{ avatar.userFirstName }}</span>
+              <span class="user-card__name">{{ avatar.firstName }}</span>
               <span class="user-card__lastname">
-                {{ avatar.userFirstSurname }}
+                {{ avatar.firstSurname }}
               </span>
               <span class="user-card__email">
-                {{ avatar.userSecondSurname }}
+                {{ avatar.secondSurname }}
               </span>
               <button
                 mat-stroked-button

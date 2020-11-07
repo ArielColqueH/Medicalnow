@@ -89,15 +89,6 @@
         <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
       </mat-form-field>
 
-      <mat-form-field appearance="fill" class="modal-container__inputs--width">
-        <mat-label>Ciudad</mat-label>
-        <mat-select [(ngModel)]="usuario.city" name="food">
-          <mat-option *ngFor="let ciudad of ciudad_combo" [value]="ciudad">
-            {{ ciudad }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
       <mat-form-field class="modal-container__inputs--width">
         <mat-label>Correo Electronico</mat-label>
         <input

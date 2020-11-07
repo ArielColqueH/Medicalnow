@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="chat-container">
+    <mat-form-field class="input-width">
+      <mat-label>Mensaje</mat-label>
+      <textarea matInput placeholder="Escriba aqui">{{
+        nombreArchivo
+      }}</textarea>
+    </mat-form-field>
+    <input
+      #csvInput
+      hidden="true"
+      type="file"
+      onclick="this.value=null"
+      accept=".png,.jpg"
+      (change)="handleFileInput($event.target.files)"
+    />
+    <button (click)="csvInput.click()" mat-fab class="circle-button--primary">
+      <mat-icon>attachment</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">Consultas individuales</div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="card-historial-completo__chat--paciente">
+    <div class="card-historial-completo__chat">
+      <div class="card-historial-completo__usuario">Paciente</div>
+      <span class="card-historial-completo__informacion--subtitulo">
+        Mensaje :
+      </span>
+      <div class="card-historial-completo__informacion--diagnostico">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat.
+      </div>
+    </div>
+  </div>
+
+  <div class="card-historial-completo__chat--doctor">
+    <div class="card-historial-completo__chat">
+      <div class="card-historial-completo__usuario">Doctor</div>
+      <span class="card-historial-completo__informacion--subtitulo">
+        Mensaje :
+      </span>
+      <div class="card-historial-completo__informacion--diagnostico">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat.
+      </div>
+    </div>
+  </div>
+</div>

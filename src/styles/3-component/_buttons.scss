@@ -21,9 +21,7 @@
     width: 25rem;
   }
 }
-.dialog__circle-button {
-  background-color: $color-primary-blue !important;
-}
+
 .button__circle {
   cursor: pointer;
   border-radius: 50rem;
@@ -44,6 +42,11 @@
       transition: 0.5s;
       background-color: lighten($color-primary-blue, 8);
     }
+  }
+}
+.circle-button {
+  &--primary {
+    background-color: $color-primary-blue !important;
   }
 }
 .button__dialog--positive {

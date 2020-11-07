@@ -1,0 +1,30 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">Consultas</div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="card-lista-consultas card-lista-consultas--header">
+    <div class="card-lista-consultas__nombre-doctor">Doctor</div>
+    <div class="card-lista-consultas__especialidad">Especialidad</div>
+    <div class="card-lista-consultas__fecha">Fecha de Inicio</div>
+    <div class="card-lista-consultas__button">Accion</div>
+  </div>
+  <!-- <div *ngFor="let item of listPrescriptionItem; let i = index"> -->
+  <div class="card-lista-consultas card-lista-consultas--row">
+    <div class="card-lista-consultas__nombre-doctor">Adrian Ramirez</div>
+    <div class="card-lista-consultas__especialidad">Odontologo</div>
+    <div class="card-lista-consultas__fecha">12 / 12 / 2020</div>
+    <div class="card-lista-consultas__button">
+      <button
+        mat-raised-button
+        class="button__normal-button"
+        (click)="irAChat()"
+      >
+        Mensajes
+      </button>
+    </div>
+  </div>
+  <!-- </div> -->
+</div>

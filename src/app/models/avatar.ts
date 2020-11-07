@@ -1,7 +1,7 @@
 export class Avatar {
-  userFirstName: string;
-  userFirstSurname: string;
-  userSecondSurname: string;
+  firstName: string;
+  firstSurname: string;
+  secondSurname: string;
   firstLetter: string;
   constructor() {}
 }
