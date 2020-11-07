@@ -19,7 +19,8 @@ export class RegistroComponent implements OnInit {
     private _service: RegistroService,
     private _router: Router,
     private route: ActivatedRoute
-  ) {}
+
+    ) {}
   ngOnInit() {}
   registerUser() {
     this._service.conexionBackend(this.user).subscribe(

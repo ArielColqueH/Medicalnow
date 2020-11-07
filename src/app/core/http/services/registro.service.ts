@@ -12,6 +12,6 @@ export class RegistroService {
 
 
   public conexionBackend(user: User):Observable<any>{
-    return this._http.post<any>("http://localhost:8008/api/v1/user/registry",user);
+    return this._http.post<any>("http://localhost:8008/api/v1/patient/registry",user);
   }
 }
