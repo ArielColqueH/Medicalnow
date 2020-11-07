@@ -14,6 +14,8 @@ export class ConsultaIndividualComponent implements OnInit {
   tipoArchivo: string = "";
   nombreArchivo: string = "";
 
+  mensaje: string = "";
+
   chat: ChatPacienteJson = {
     specialtyName: "Doctor Who",
     specialtyDoctor: "Odontologo",
@@ -98,5 +100,9 @@ export class ConsultaIndividualComponent implements OnInit {
       console.log(tam);
       return true;
     }
+  }
+  enviarMensaje() {
+    console.log(this.mensaje);
+    this.mensaje = "";
   }
 }

@@ -1,4 +1,5 @@
 .chat-container {
+  box-shadow: $color-box-shadow;
   width: 75% !important;
   background-color: $color-primary-white;
   position: fixed !important;
@@ -12,5 +13,5 @@
   padding: 1rem 5rem;
 }
 .input-width {
-  width: 95%;
+  width: 90%;
 }
