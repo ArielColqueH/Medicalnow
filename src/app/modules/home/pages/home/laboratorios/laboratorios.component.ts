@@ -1,6 +1,7 @@
+import { HostListener } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
-import { Router } from '@angular/router';
-import { LaboratoryService } from 'src/app/core/http/services/laboratory.service';
+import { Router } from "@angular/router";
+import { LaboratoryService } from "src/app/core/http/services/laboratory.service";
 import { Laboratory } from "src/app/models/Laboratory";
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
 
@@ -10,10 +11,8 @@ import { ListEspecialist } from "src/app/models/ListaEspecialista";
   styleUrls: ["./laboratorios.component.scss"],
 })
 export class LaboratoriosComponent implements OnInit {
-
   listlaboratory: Laboratory[];
   aux: any;
-
 
   /*laboratoryList: Laboratory[] = [
     {
@@ -39,8 +38,13 @@ export class LaboratoriosComponent implements OnInit {
   }
 
   ObtenerDatos() {
-    this._service.listLaboratory().subscribe(
-      (data) => (this.listlaboratory = data));
-      this.aux = this.listlaboratory;
+    this._service
+      .listLaboratory()
+      .subscribe((data) => (this.listlaboratory = data));
+    this.aux = this.listlaboratory;
+  }
+  @HostListener("window:beforeunload", ["$event"])
+  clearLocalStorage(event) {
+    localStorage.clear();
   }
 }

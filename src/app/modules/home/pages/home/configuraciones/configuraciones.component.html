@@ -1,136 +1,133 @@
 <div class="utility-center-horizontal">
   <div class="modal-container">
     <div class="modal-container__titulo">Configuracion</div>
-    <div *ngFor="let item of configuraciones; let i = index">
-      <form class="modal-container__inputs">
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Nombre</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="Nombre"
-            [(ngModel)]="item.firstName"
-            name="nombre"
-          />
-          <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Apellido Paterno</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="Apellido Paterno"
-            [(ngModel)]="item.firstSurname"
-            name="apellidoPaterno"
-          />
-          <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Apellido Materno</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="Apellido Materno"
-            [(ngModel)]="item.secondSurname"
-            name="apellidoMaterno"
-          />
-          <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Celular</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="Numero de Celular"
-            [(ngModel)]="item.phoneNumber"
-            name="celular"
-          />
-          <mat-icon matSuffix class="modal-container__icon">local_phone</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Fecha de Nacimiento</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="Fecha de nacimiento"
-            [(ngModel)]="item.birthDate"
-            name="fechaNacimiento"
-          />
-          <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Peso</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="Peso"
-            name="peso"
-            type="number"
-            [(ngModel)]="item.weight"
-          />
-          <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Altura</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="Altura"
-            name="altura"
-            type="number"
-            [(ngModel)]="item.height"
-          />
-          <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="modal-container__inputs--width">
-          <mat-label>Ciudad</mat-label>
-          <mat-select [(ngModel)]="item.city" name="food">
-            <mat-option *ngFor="let ciudad of ciudad_combo" [value]="ciudad">
-              {{ ciudad }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Correo Electronico</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="ejemplo@ejemplo.com"
-            name="correo"
-            [(ngModel)]="item.email"
-          />
-          <mat-icon matSuffix class="modal-container__icon">email</mat-icon>
-        </mat-form-field>
-  
-        <mat-form-field class="modal-container__inputs--width">
-          <mat-label>Contraseña</mat-label>
-          <input
-            class="input-form"
-            matInput
-            placeholder="**********"
-            name="contrasenia"
-            [(ngModel)]="item.password"
-            type="password"
-            autocomplete="new-password"
-          />
-          <mat-icon matSuffix class="modal-container__icon">https</mat-icon>
-        </mat-form-field>
-      </form>
-  
-      <div class="modal-container__button">
-        <button mat-raised-button class="button__large-button" (click)="datosActualizados(item)">
-          Guardar Datos
-        </button>
-      </div>
-    </div>
-    </div>
-    
+
+    <form class="modal-container__inputs">
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Nombre</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Nombre"
+          [(ngModel)]="usuario.firstName"
+          name="nombre"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Apellido Paterno</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Apellido Paterno"
+          [(ngModel)]="usuario.firstSurname"
+          name="apellidoPaterno"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Apellido Materno</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Apellido Materno"
+          [(ngModel)]="usuario.secondSurname"
+          name="apellidoMaterno"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Celular</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Numero de Celular"
+          [(ngModel)]="usuario.phoneNumber"
+          name="celular"
+        />
+        <mat-icon matSuffix class="modal-container__icon">local_phone</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Fecha de nacimiento"
+          [(ngModel)]="usuario.birthDate"
+          name="fechaNacimiento"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Peso</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Peso"
+          name="peso"
+          type="number"
+          [(ngModel)]="usuario.weight"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Altura</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Altura"
+          name="altura"
+          type="number"
+          [(ngModel)]="usuario.height"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="modal-container__inputs--width">
+        <mat-label>Ciudad</mat-label>
+        <mat-select [(ngModel)]="usuario.city" name="food">
+          <mat-option *ngFor="let ciudad of ciudad_combo" [value]="ciudad">
+            {{ ciudad }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Correo Electronico</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="ejemplo@ejemplo.com"
+          name="correo"
+          [(ngModel)]="usuario.email"
+        />
+        <mat-icon matSuffix class="modal-container__icon">email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Contraseña</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="**********"
+          name="contrasenia"
+          [(ngModel)]="usuario.password"
+          type="password"
+          autocomplete="new-password"
+        />
+        <mat-icon matSuffix class="modal-container__icon">https</mat-icon>
+      </mat-form-field>
+    </form>
+    <button
+      mat-raised-button
+      class="button__large-button" (click)="datosActualizados()">
+      Guardar Datos
+    </button>
+  </div>
 </div>

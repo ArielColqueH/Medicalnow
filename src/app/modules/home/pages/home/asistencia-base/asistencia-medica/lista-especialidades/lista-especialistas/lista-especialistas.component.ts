@@ -5,7 +5,8 @@ import { DoctorSpecialtyModel } from "src/app/models/doctor-specialty-model";
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
 import { MatDialog } from "@angular/material/dialog";
 import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a-especialista/mensaje-a-especialista.component";
-import { SpecialtyModel } from 'src/app/models/specialty-model';
+import { SpecialtyModel } from "src/app/models/specialty-model";
+import { HostListener } from "@angular/core";
 
 @Component({
   selector: "app-lista-especialistas",
@@ -29,9 +30,7 @@ export class ListaEspecialistasComponent implements OnInit {
   ];*/
   nombreEspecialidad: SpecialtyModel;
 
-  listaEspecialista: DoctorSpecialtyModel[];
-  lista: SpecialtyModel;
-  aux: any;
+  listaEspecialista: DoctorSpecialtyModel[] = [];
   id: string = "";
 
   constructor(
@@ -60,5 +59,10 @@ export class ListaEspecialistasComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  @HostListener("window:beforeunload", ["$event"])
+  clearLocalStorage(event) {
+    localStorage.clear();
   }
 }

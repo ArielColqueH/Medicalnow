@@ -1,3 +1,4 @@
+import { HostListener } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
@@ -12,5 +13,9 @@ export class HistorialListaComponent implements OnInit {
   ngOnInit() {}
   irHistorialGeneral() {
     this._router.navigate(["historial-completo"], { relativeTo: this.route });
+  }
+  @HostListener("window:beforeunload", ["$event"])
+  clearLocalStorage(event) {
+    localStorage.clear();
   }
 }

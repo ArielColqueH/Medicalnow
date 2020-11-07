@@ -1,3 +1,4 @@
+import { HostListener } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { RegistroService } from "src/app/core/http/services/registro.service";
@@ -54,4 +55,9 @@ export class ListaEspecialidadesComponent implements OnInit {
       relativeTo: this.route,
     });
   }
+
+  // @HostListener("window:beforeunload", ["$event"])
+  // clearLocalStorage(event) {
+  //   localStorage.clear();
+  // }
 }
