@@ -12,6 +12,6 @@ export class HistorialListaComponent implements OnInit {
 
   ngOnInit() {}
   irHistorialGeneral() {
-    //this._router.navigate(["historial-completo"], { relativeTo: this.route });
+    this._router.navigate(["historial-completo"], { relativeTo: this.route });
   }
 }

@@ -4,11 +4,13 @@ import { PrescriptionItem } from "src/app/models/prescription-item";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 
 @Component({
-  selector: "app-recetas",
-  templateUrl: "./recetas.component.html",
-  styleUrls: ["./recetas.component.scss"],
+  selector: "app-prescripcion-detalle",
+  templateUrl: "./prescripcion-detalle.component.html",
+  styleUrls: ["./prescripcion-detalle.component.scss"],
 })
-export class RecetasComponent implements OnInit {
+export class PrescripcionDetalleComponent implements OnInit {
+  constructor(public dialog: MatDialog) {}
+
   listPrescriptionItem: PrescriptionItem[] = [
     {
       prescriptionItemId: 1,
@@ -25,7 +27,6 @@ export class RecetasComponent implements OnInit {
       prescriptionId: 2,
     },
   ];
-  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
 

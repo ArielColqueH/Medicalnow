@@ -19,7 +19,6 @@ import { RouterModule } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatExpansionModule } from "@angular/material/expansion";
-import { RecetasComponent } from "./pages/home/recetas/recetas.component";
 import { LaboratoriosComponent } from "./pages/home/laboratorios/laboratorios.component";
 import { ConfiguracionesComponent } from "./pages/home/configuraciones/configuraciones.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -39,6 +38,9 @@ import { HistorialCompletoComponent } from "./pages/home/historial-base/historia
 import { ConsultasBaseComponent } from "./pages/home/consultas-base/consultas-base.component";
 import { ConsultasListaComponent } from "./pages/home/consultas-base/consultas-lista/consultas-lista.component";
 import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consultas-lista/consulta-individual/consulta-individual.component";
+import { PrescripcionesBaseComponent } from "./pages/home/prescripciones-base/prescripciones-base.component";
+import { PrescripcionesComponent } from "./pages/home/prescripciones-base/prescripciones/prescripciones.component";
+import { PrescripcionDetalleComponent } from "./pages/home/prescripciones-base/prescripciones/prescripcion-detalle/prescripcion-detalle.component";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,6 @@ import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consult
     LayoutComponent,
     MainComponent,
     SidebarComponent,
-    RecetasComponent,
     LaboratoriosComponent,
     ConfiguracionesComponent,
     AsistenciaBaseComponent,
@@ -63,6 +64,10 @@ import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consult
     ConsultasBaseComponent,
     ConsultasListaComponent,
     ConsultaIndividualComponent,
+    PrescripcionesBaseComponent,
+    PrescripcionDetalleComponent,
+    PrescripcionesComponent,
+    PrescripcionDetalleComponent,
   ],
   imports: [
     CommonModule,
