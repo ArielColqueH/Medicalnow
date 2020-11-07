@@ -11,20 +11,24 @@
     <div class="card-lista-consultas__fecha">Fecha de Inicio</div>
     <div class="card-lista-consultas__button">Accion</div>
   </div>
-  <!-- <div *ngFor="let item of listPrescriptionItem; let i = index"> -->
-  <div class="card-lista-consultas card-lista-consultas--row">
-    <div class="card-lista-consultas__nombre-doctor">Adrian Ramirez</div>
-    <div class="card-lista-consultas__especialidad">Odontologo</div>
-    <div class="card-lista-consultas__fecha">12 / 12 / 2020</div>
-    <div class="card-lista-consultas__button">
-      <button
-        mat-raised-button
-        class="button__normal-button"
-        (click)="irAChat()"
-      >
-        Mensajes
-      </button>
+  <div *ngFor="let item of consultas; let i = index">
+    <div class="card-lista-consultas card-lista-consultas--row">
+      <div class="card-lista-consultas__nombre-doctor">
+        {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
+      </div>
+      <div class="card-lista-consultas__especialidad">
+        {{ item.specialtyName }}
+      </div>
+      <div class="card-lista-consultas__fecha">{{ item.startDate }}</div>
+      <div class="card-lista-consultas__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="irAChat()"
+        >
+          Mensajes
+        </button>
+      </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>

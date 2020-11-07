@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
+import { ChatPacienteJson } from "src/app/models/ChatPacienteJson";
 
 @Component({
   selector: "app-consulta-individual",
@@ -12,6 +13,53 @@ export class ConsultaIndividualComponent implements OnInit {
   Url: string = "";
   tipoArchivo: string = "";
   nombreArchivo: string = "";
+
+  chat: ChatPacienteJson = {
+    specialtyName: "Doctor Who",
+    specialtyDoctor: "Odontologo",
+    body: [
+      {
+        userIdentity: 0,
+        message: "Doctor , comi pan y me hizo mal",
+      },
+      {
+        userIdentity: 1,
+        message: "Hola como es , apate de eso comio algo?",
+      },
+      {
+        userIdentity: 0,
+        message: "no doctor",
+      },
+      {
+        userIdentity: 0,
+        message: "no comi nada mas",
+      },
+      {
+        userIdentity: 1,
+        message: "Entonces lo que necesito es un poco mas de informacion",
+      },
+      {
+        userIdentity: 0,
+        message: "Doctor , comi pan y me hizo mal",
+      },
+      {
+        userIdentity: 1,
+        message: "Hola como es , apate de eso comio algo?",
+      },
+      {
+        userIdentity: 0,
+        message: "no doctor",
+      },
+      {
+        userIdentity: 0,
+        message: "no comi nada mas",
+      },
+      {
+        userIdentity: 1,
+        message: "Entonces lo que necesito es un poco mas de informacion",
+      },
+    ],
+  };
 
   constructor(public dialog: MatDialog) {}
 
