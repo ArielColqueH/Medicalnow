@@ -24,15 +24,16 @@
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
       <div class="title__text">
-        Consultas individuales | {{ chat.specialtyName }} |
-        {{ chat.specialtyDoctor }}
+        Consultas individuales | {{ chat.doctorInfo.firstName }}
+        {{ chat.doctorInfo.firstSurname }} {{ chat.doctorInfo.secondSurname }} |
+        {{ chat.doctorInfo.specialtyName }}
       </div>
       <div class="title__row"></div>
     </div>
   </div>
   <div class="mb-15">
-    <div *ngFor="let item of chat.body; let i = index">
-      <ng-container *ngIf="item.userIdentity == 0; else elseTemplate">
+    <div *ngFor="let item of chat.content; let i = index">
+      <ng-container *ngIf="item.roleId == 2; else elseTemplate">
         <div class="card-historial-completo__chat--paciente">
           <div class="card-historial-completo__chat">
             <div class="card-historial-completo__usuario">Paciente</div>
