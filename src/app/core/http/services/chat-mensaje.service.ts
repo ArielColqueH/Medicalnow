@@ -16,7 +16,7 @@ export class ChatMensajeService {
     });
     return this._http.post<any>(
       `${config.apiUrl}/chat/send/message/patient/` +
-        pacientMessage.doctorSpecialtyId,
+        localStorage.getItem("userId"),
       pacientMessage,
       {
         headers: reqHeader,

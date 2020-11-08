@@ -104,5 +104,6 @@ export class ConsultaIndividualComponent implements OnInit {
       .sendMenssage(this.mensajeChat)
       .subscribe((data) => (this.chat = data));
     this.mensaje = "";
+    window.location.reload();
   }
 }
