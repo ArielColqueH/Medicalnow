@@ -8,13 +8,13 @@ import { config } from "src/app/models/auth/config";
 export class ConsultasService {
   constructor(private _http: HttpClient) {}
 
-  listConsults() {
+  listConsults(consultaId: string) {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/consults/patient/` + localStorage.getItem("userId"),
+      `${config.apiUrl}/consults/patient/` + consultaId,
       {
         headers: reqHeader,
       }

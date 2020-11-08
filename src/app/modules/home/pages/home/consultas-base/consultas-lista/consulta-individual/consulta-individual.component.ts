@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
+import { ActivatedRoute } from "@angular/router";
 import { ChatMensajeService } from "src/app/core/http/services/chat-mensaje.service";
 import { ChatPacienteService } from "src/app/core/http/services/chat-paciente.service";
 import { ChatPacienteJson } from "src/app/models/ChatPacienteJson";
+import { PatientMessageModel } from "src/app/models/PatientMessageModel";
 
 @Component({
   selector: "app-consulta-individual",
@@ -10,7 +12,6 @@ import { ChatPacienteJson } from "src/app/models/ChatPacienteJson";
   styleUrls: ["./consulta-individual.component.scss"],
 })
 export class ConsultaIndividualComponent implements OnInit {
-  chat = new ChatPacienteJson();
   fileToUpload: File = null;
   nombre: string = "";
   Url: string = "";
@@ -20,56 +21,34 @@ export class ConsultaIndividualComponent implements OnInit {
   mensaje: string = "";
 
   // chat: ChatPacienteJson = {
-  //   doctor: "Doctor Who",
-  //   specialty: "Odontologo",
+  //   doctorInfo: {
+  //     firstName: "Page",
+  //     firstSurname: "Paslow",
+  //     secondSurname: "Bleas",
+  //     specialtyName: "Alergologia",
+  //   },
   //   content: [
   //     {
-  //       roleId: 0,
+  //       roleId: 2,
   //       message: "Doctor , comi pan y me hizo mal",
   //     },
   //     {
-  //       roleId: 1,
+  //       roleId: 2,
   //       message: "Hola como es , apate de eso comio algo?",
   //     },
   //     {
-  //       roleId: 0,
+  //       roleId: 3,
   //       message: "no doctor",
-  //     },
-  //     {
-  //       roleId: 0,
-  //       message: "no comi nada mas",
-  //     },
-  //     {
-  //       roleId: 1,
-  //       message: "Entonces lo que necesito es un poco mas de informacion",
-  //     },
-  //     {
-  //       roleId: 0,
-  //       message: "Doctor , comi pan y me hizo mal",
-  //     },
-  //     {
-  //       roleId: 1,
-  //       message: "Hola como es , apate de eso comio algo?",
-  //     },
-  //     {
-  //       roleId: 0,
-  //       message: "no doctor",
-  //     },
-  //     {
-  //       roleId: 0,
-  //       message: "no comi nada mas",
-  //     },
-  //     {
-  //       roleId: 1,
-  //       message: "Entonces lo que necesito es un poco mas de informacion",
   //     },
   //   ],
   // };
-
+  chat = new ChatPacienteJson();
+  mensajeChat = new PatientMessageModel();
   constructor(
     public dialog: MatDialog,
     private _service: ChatPacienteService,
-    private _serviceMessage: ChatMensajeService
+    private _serviceMessage: ChatMensajeService,
+    private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -77,7 +56,9 @@ export class ConsultaIndividualComponent implements OnInit {
   }
 
   ObtenerDatos() {
-    this._service.listChat().subscribe((data) => (this.chat = data));
+    this._service
+      .listChat(this._route.snapshot.paramMap.get("id"))
+      .subscribe((data) => (this.chat = data));
   }
 
   handleFileInput(file: FileList) {
@@ -114,9 +95,14 @@ export class ConsultaIndividualComponent implements OnInit {
       return true;
     }
   }
-  enviarMensaje() {
-    console.log(this.mensaje);
+  enviarMensaje(doctorSpecialtyId: number) {
+    this.mensajeChat = {
+      doctorSpecialtyId: doctorSpecialtyId,
+      message: this.mensaje,
+    };
+    this._serviceMessage
+      .sendMenssage(this.mensajeChat)
+      .subscribe((data) => (this.chat = data));
     this.mensaje = "";
-    this._serviceMessage.sendMenssage().subscribe((data) => (this.chat = data));
   }
 }

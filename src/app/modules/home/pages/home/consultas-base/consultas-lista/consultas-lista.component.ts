@@ -11,7 +11,7 @@ import { Consults } from "src/app/models/Consults";
 export class ConsultasListaComponent implements OnInit {
   constructor(
     private _router: Router,
-    private route: ActivatedRoute,
+    private _route: ActivatedRoute,
     private _service: ConsultasService
   ) {}
 
@@ -20,11 +20,15 @@ export class ConsultasListaComponent implements OnInit {
     this.ObtenerDatos();
   }
 
-  irAChat() {
-    this._router.navigate(["consulta-individual"], { relativeTo: this.route });
+  irAChat(consultaId: number) {
+    this._router.navigate(["consulta-individual/" + consultaId], {
+      relativeTo: this._route,
+    });
   }
 
   ObtenerDatos() {
-    this._service.listConsults().subscribe((data) => (this.consultas = data));
+    this._service
+      .listConsults(this._route.snapshot.paramMap.get("id"))
+      .subscribe((data) => (this.consultas = data));
   }
 }

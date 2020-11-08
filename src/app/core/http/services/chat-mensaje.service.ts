@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { config } from "src/app/models/auth/config";
+import { PatientMessageModel } from "src/app/models/PatientMessageModel";
 
 @Injectable({
   providedIn: "root",
@@ -8,13 +9,15 @@ import { config } from "src/app/models/auth/config";
 export class ChatMensajeService {
   constructor(private _http: HttpClient) {}
 
-  sendMenssage() {
+  sendMenssage(pacientMessage: PatientMessageModel) {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
-    return this._http.get<any>(
-      `${config.apiUrl}/chat/` + localStorage.getItem("userId") + `/messages`,
+    return this._http.post<any>(
+      `${config.apiUrl}/chat/send/message/patient/` +
+        pacientMessage.doctorSpecialtyId,
+      pacientMessage,
       {
         headers: reqHeader,
       }

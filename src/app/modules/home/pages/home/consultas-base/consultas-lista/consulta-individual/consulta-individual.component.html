@@ -17,16 +17,21 @@
     <button (click)="csvInput.click()" mat-fab class="circle-button--primary">
       <mat-icon>attachment</mat-icon>
     </button>
-    <button (click)="enviarMensaje()" mat-fab class="circle-button--primary">
+    <button
+      (click)="enviarMensaje(chat.doctorInfo.doctorSpecialtyId)"
+      mat-fab
+      class="circle-button--primary"
+    >
       <mat-icon>send</mat-icon>
     </button>
   </div>
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
       <div class="title__text">
-        Consultas individuales | {{ chat.doctorInfo.firstName }}
+        Consultas individuales
+        <!-- | {{ chat.doctorInfo.firstName }}
         {{ chat.doctorInfo.firstSurname }} {{ chat.doctorInfo.secondSurname }} |
-        {{ chat.doctorInfo.specialtyName }}
+        {{ chat.doctorInfo.specialtyName }} -->
       </div>
       <div class="title__row"></div>
     </div>
