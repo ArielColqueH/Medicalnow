@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Inject, OnInit } from "@angular/core";
+import { MAT_DIALOG_DATA } from '@angular/material';
 import { Prescription } from "src/app/models/prescription";
 
 @Component({
@@ -7,6 +8,11 @@ import { Prescription } from "src/app/models/prescription";
   styleUrls: ["./detalle-prescripcion.component.scss"],
 })
 export class DetallePrescripcionComponent implements OnInit {
+  
+  passedId: string;
+
+  
+
   prescriptionList: Prescription[] = [
     {
       prescriptionId: 1,
@@ -22,7 +28,7 @@ export class DetallePrescripcionComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(@Inject(MAT_DIALOG_DATA)public data: {id:string}) {}
 
   ngOnInit() {}
 }

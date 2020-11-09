@@ -1,24 +1,20 @@
 <div class="container">
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
+      <!--<div class="title__text">Prescripciones | Especialidad {{listaPrescription.specialtyName}}</div>-->
       <div class="title__text">Prescripciones | Especialidad</div>
       <div class="title__row"></div>
     </div>
   </div>
   <div class="card-lista-prescripcion card-lista-prescripcion--header">
-    <div class="card-lista-prescripcion__nombre-diagnostico">Diagnostico</div>
-    <div class="card-lista-prescripcion__nombre-doctor">Doctor Asignado</div>
+    
     <div class="card-lista-prescripcion__fecha">Fecha</div>
     <div class="card-lista-prescripcion__button">Acciones</div>
   </div>
+ <!-- <div *ngFor="let item of listaPrescription.body; let i = index">-->
   <div *ngFor="let item of listPrescriptionItem; let i = index">
     <div class="card-lista-prescripcion card-lista-prescripcion--row">
-      <div class="card-lista-prescripcion__nombre-diagnostico">
-        {{ item.diagnosisName }}
-      </div>
-      <div class="card-lista-prescripcion__nombre-doctor">
-        {{ item.doctorName }}
-      </div>
+     
       <div class="card-lista-prescripcion__fecha">
         {{ item.prescriptionDate }}
       </div>
@@ -26,7 +22,7 @@
         <button
           mat-raised-button
           class="button__normal-button"
-          (click)="openDialog()"
+          (click)="openDialog(item.prescriptionId)"
         >
           Ver
         </button>
