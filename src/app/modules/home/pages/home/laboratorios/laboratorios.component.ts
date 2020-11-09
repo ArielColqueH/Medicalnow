@@ -12,7 +12,6 @@ import { ListEspecialist } from "src/app/models/ListaEspecialista";
 })
 export class LaboratoriosComponent implements OnInit {
   listlaboratory: Laboratory[];
-  aux: any;
 
   /*laboratoryList: Laboratory[] = [
     {
