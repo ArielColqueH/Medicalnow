@@ -13,14 +13,11 @@
   </div>
   <div *ngFor="let item of listPrescriptionItem; let i = index">
     <div class="card-lista-prescripcion card-lista-prescripcion--row">
-      <div class="card-lista-prescripcion__nombre-diagnostico">
-        {{ item.diagnosis }}
-      </div>
       <div class="card-lista-prescripcion__nombre-doctor">
-        {{ item.doctorFirstName }}
+        {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
       </div>
-      <div class="card-lista-prescripcion__apellido-doctor">
-        {{ item.doctorFirstSurname }}
+      <div class="card-lista-prescripcion__nombre-diagnostico">
+        {{ item.specialtyName }}
       </div>
       <div class="card-lista-prescripcion__fecha">
         {{ item.prescriptionDate }}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { PrescriptionListService } from "src/app/core/http/services/prescription-list.service";
 import { PrescriptionItem } from "src/app/models/prescription-item";
 
 @Component({
@@ -8,30 +9,47 @@ import { PrescriptionItem } from "src/app/models/prescription-item";
   styleUrls: ["./prescripciones.component.scss"],
 })
 export class PrescripcionesComponent implements OnInit {
-  listPrescriptionItem: PrescriptionItem[] = [
-    {
-      prescriptionId: 1,
-      diagnosis: "Lorem Ipsum",
-      doctorFirstName: "Richard",
-      doctorFirstSurname:"Lups",
-      prescriptionDate: "12/12/2020"
-    },
-    {
-      prescriptionId: 2,
-      diagnosis: "Lorem Ipsum",
-      doctorFirstName: "Maria",
-      doctorFirstSurname:"Delagado",
-      prescriptionDate: "11/12/2020"
-      
-    },
-  ];
-  constructor(private _router: Router, private route: ActivatedRoute) {}
+  // listPrescriptionItem: PrescriptionItem[] = [
+  //   {
+  //     prescriptionId: 1,
+  //     medicalHistoryId: 1,
+  //     firstName: "Benedict",
+  //     firstSurname: "Lopez",
+  //     secondSurname: "Espinoza",
+  //     specialtyName: "Odontologia",
+  //     prescriptionDate: "2020/1/20",
+  //   },
+  //   {
+  //     prescriptionId: 1,
+  //     medicalHistoryId: 1,
+  //     firstName: "Benedict",
+  //     firstSurname: "Lopez",
+  //     secondSurname: "Espinoza",
+  //     specialtyName: "Odontologia",
+  //     prescriptionDate: "2020/1/20",
+  //   },
+  // ];
+  listPrescriptionItem: PrescriptionItem[];
+  constructor(
+    private _router: Router,
+    private route: ActivatedRoute,
+    private _service: PrescriptionListService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.ObtenerDatos();
+  }
 
   irRecetas() {
     this._router.navigate(["prescripciones-detalle"], {
       relativeTo: this.route,
     });
+  }
+
+  ObtenerDatos() {
+    this._service
+      .listPrescription()
+      .subscribe((data) => (this.listPrescriptionItem = data));
+    //this.aux = this.listaEspecialidades;
   }
 }

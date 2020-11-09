@@ -1,8 +1,9 @@
 export class PrescriptionItem {
   prescriptionId: number;
-  diagnosis:string;
-  doctorFirstName:string;
-  doctorFirstSurname:string;
-  prescriptionDate:string;
-  
+  medicalHistoryId: number;
+  firstName: string;
+  firstSurname: string;
+  secondSurname: string;
+  specialtyName: string;
+  prescriptionDate: string;
 }
