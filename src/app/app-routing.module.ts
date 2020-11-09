@@ -107,7 +107,7 @@ const routes: Routes = [
             component: ConsultasListaComponent,
           },
           {
-            path: "consulta-individual",
+            path: "consulta-individual/:id",
             children: [
               {
                 path: "",

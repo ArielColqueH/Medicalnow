@@ -23,17 +23,14 @@
         <div class="card-lista-laboratorios__nombre-laboratorio">
           {{ item.laboratoryName }}
         </div>
-        <div class="card-lista-laboratorios__nombre-doctor">
-          {{ item.doctorFirstName }}
-        </div>
-        <div class="card-lista-laboratorios__apellido-doctor">
-          {{ item.doctorFirstSurname }}
+        <div class="card-lista-laboratorios__nombre">
+          {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
         </div>
         <div class="card-lista-laboratorios__nombre-especialista">
           {{ item.specialtyName }}
         </div>
         <div class="card-lista-laboratorios__fecha">
-          {{ item.laboratoryOrderDate }}
+          {{ item.orderDate }}
         </div>
         <div class="card-lista-laboratorios__button">
           <button mat-mini-fab class="button__normal-circle-button">

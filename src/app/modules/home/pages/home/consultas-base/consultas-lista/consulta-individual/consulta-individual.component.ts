@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
+import { ActivatedRoute } from "@angular/router";
+import { ChatMensajeService } from "src/app/core/http/services/chat-mensaje.service";
+import { ChatPacienteService } from "src/app/core/http/services/chat-paciente.service";
+import { ChatPacienteJson } from "src/app/models/ChatPacienteJson";
+import { PatientMessageModel } from "src/app/models/PatientMessageModel";
 
 @Component({
   selector: "app-consulta-individual",
@@ -13,9 +18,48 @@ export class ConsultaIndividualComponent implements OnInit {
   tipoArchivo: string = "";
   nombreArchivo: string = "";
 
-  constructor(public dialog: MatDialog) {}
+  mensaje: string = "";
 
-  ngOnInit() {}
+  // chat: ChatPacienteJson = {
+  //   doctorInfo: {
+  //     firstName: "Page",
+  //     firstSurname: "Paslow",
+  //     secondSurname: "Bleas",
+  //     specialtyName: "Alergologia",
+  //   },
+  //   content: [
+  //     {
+  //       roleId: 2,
+  //       message: "Doctor , comi pan y me hizo mal",
+  //     },
+  //     {
+  //       roleId: 2,
+  //       message: "Hola como es , apate de eso comio algo?",
+  //     },
+  //     {
+  //       roleId: 3,
+  //       message: "no doctor",
+  //     },
+  //   ],
+  // };
+  chat = new ChatPacienteJson();
+  mensajeChat = new PatientMessageModel();
+  constructor(
+    public dialog: MatDialog,
+    private _service: ChatPacienteService,
+    private _serviceMessage: ChatMensajeService,
+    private _route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.ObtenerDatos();
+  }
+
+  ObtenerDatos() {
+    this._service
+      .listChat(this._route.snapshot.paramMap.get("id"))
+      .subscribe((data) => (this.chat = data));
+  }
 
   handleFileInput(file: FileList) {
     this.fileToUpload = null;
@@ -50,5 +94,16 @@ export class ConsultaIndividualComponent implements OnInit {
       console.log(tam);
       return true;
     }
+  }
+  enviarMensaje(doctorSpecialtyId: number) {
+    this.mensajeChat = {
+      doctorSpecialtyId: doctorSpecialtyId,
+      message: this.mensaje,
+    };
+    this._serviceMessage
+      .sendMenssage(this.mensajeChat)
+      .subscribe((data) => (this.chat = data));
+    this.mensaje = "";
+    window.location.reload();
   }
 }

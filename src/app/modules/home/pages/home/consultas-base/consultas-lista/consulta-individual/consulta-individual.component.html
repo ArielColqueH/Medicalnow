@@ -2,7 +2,7 @@
   <div class="chat-container">
     <mat-form-field class="input-width">
       <mat-label>Mensaje</mat-label>
-      <textarea matInput placeholder="Escriba aqui">{{
+      <textarea matInput placeholder="Escriba aqui" [(ngModel)]="mensaje">{{
         nombreArchivo
       }}</textarea>
     </mat-form-field>
@@ -17,36 +17,52 @@
     <button (click)="csvInput.click()" mat-fab class="circle-button--primary">
       <mat-icon>attachment</mat-icon>
     </button>
+    <button
+      (click)="enviarMensaje(chat.doctorInfo.doctorSpecialtyId)"
+      mat-fab
+      class="circle-button--primary"
+    >
+      <mat-icon>send</mat-icon>
+    </button>
   </div>
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
-      <div class="title__text">Consultas individuales</div>
+      <div class="title__text">
+        Consultas individuales | {{ chat.doctorInfo.firstName }}
+        {{ chat.doctorInfo.firstSurname }} {{ chat.doctorInfo.secondSurname }} |
+        {{ chat.doctorInfo.specialtyName }}
+      </div>
       <div class="title__row"></div>
     </div>
   </div>
-  <div class="card-historial-completo__chat--paciente">
-    <div class="card-historial-completo__chat">
-      <div class="card-historial-completo__usuario">Paciente</div>
-      <span class="card-historial-completo__informacion--subtitulo">
-        Mensaje :
-      </span>
-      <div class="card-historial-completo__informacion--diagnostico">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat.
-      </div>
-    </div>
-  </div>
-
-  <div class="card-historial-completo__chat--doctor">
-    <div class="card-historial-completo__chat">
-      <div class="card-historial-completo__usuario">Doctor</div>
-      <span class="card-historial-completo__informacion--subtitulo">
-        Mensaje :
-      </span>
-      <div class="card-historial-completo__informacion--diagnostico">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat.
-      </div>
+  <div class="mb-15">
+    <div *ngFor="let item of chat.content; let i = index">
+      <ng-container *ngIf="item.roleId == 2; else elseTemplate">
+        <div class="card-historial-completo__chat--paciente">
+          <div class="card-historial-completo__chat">
+            <div class="card-historial-completo__usuario">Paciente</div>
+            <span class="card-historial-completo__informacion--subtitulo">
+              Mensaje :
+            </span>
+            <div class="card-historial-completo__informacion--diagnostico">
+              {{ item.message }}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="card-historial-completo__chat--doctor">
+          <div class="card-historial-completo__chat">
+            <div class="card-historial-completo__usuario">Doctor</div>
+            <span class="card-historial-completo__informacion--subtitulo">
+              Mensaje :
+            </span>
+            <div class="card-historial-completo__informacion--diagnostico">
+              {{ item.message }}
+            </div>
+          </div>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
