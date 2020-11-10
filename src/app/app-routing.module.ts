@@ -11,6 +11,7 @@ import { ConfiguracionesComponent } from "./modules/home/pages/home/configuracio
 import { ConsultasBaseComponent } from "./modules/home/pages/home/consultas-base/consultas-base.component";
 import { ConsultaIndividualComponent } from "./modules/home/pages/home/consultas-base/consultas-lista/consulta-individual/consulta-individual.component";
 import { ConsultasListaComponent } from "./modules/home/pages/home/consultas-base/consultas-lista/consultas-lista.component";
+import { DatosMedicosComponent } from "./modules/home/pages/home/datos-medicos/datos-medicos.component";
 import { HistorialBaseComponent } from "./modules/home/pages/home/historial-base/historial-base.component";
 import { HistorialCompletoComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
 import { HistorialListaComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-lista.component";
@@ -121,6 +122,10 @@ const routes: Routes = [
       {
         path: "laboratorios/:id",
         component: LaboratoriosComponent,
+      },
+      {
+        path: "datos-medicos/:id",
+        component: DatosMedicosComponent,
       },
       {
         path: "configuraciones/:id",

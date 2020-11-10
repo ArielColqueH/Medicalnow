@@ -1,0 +1,76 @@
+.card-datos-medicos {
+  &__columna {
+    //background-color: red;
+    padding: 0rem 2rem;
+  }
+  &__titulo {
+    color: $color-primary-white;
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 2rem 0;
+  }
+  &__container {
+    background-color: $color-primary-white;
+    border-radius: 2rem;
+    padding: 3rem 4rem;
+    box-shadow: $color-box-shadow;
+  }
+  &__informacion {
+    display: flex;
+    margin: 1rem 0;
+    //background-color: red;
+    align-items: center;
+    &--subtitulo {
+      flex: 0 1 30%;
+      color: $color-primary-black;
+      font-weight: bold;
+      text-align: center;
+      //   margin-top: 1.5rem;
+    }
+    &--titulo {
+      flex: 1;
+      padding-left: 1rem;
+      color: $color-primary-blue;
+      font-weight: bold;
+    }
+    &--unidad {
+      flex: 0 1 10%;
+      font-size: 1.6rem;
+      color: $color-primary-blue;
+      font-weight: bold;
+      margin-left: 2rem;
+      text-align: center;
+    }
+    &--diagnostico {
+      color: $color-primary-blue;
+      font-weight: bold;
+    }
+  }
+
+  &__chat {
+    margin: 1rem 0;
+    background-color: $color-primary-white;
+    border-radius: 2rem;
+    padding: 3rem 4rem;
+    box-shadow: $color-box-shadow;
+    width: 60%;
+    &--paciente {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &--doctor {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__usuario {
+    color: $color-primary-blue;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  &__chat-line {
+    border-bottom: 1px solid $color-primary-black;
+    margin: 1rem 0;
+  }
+}

@@ -1,0 +1,130 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">Datos Medicos</div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="card-datos-medicos__titulo">* Generales</div>
+  <div class="card-datos-medicos__container">
+    <div class="" fxLayout="row">
+      <div class="card-datos-medicos__columna" fxFlex="50">
+        <form>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">Peso :</div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Peso</mat-label>
+                <input
+                  id="peso"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 85"
+                  name="peso"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">Kg</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Altura :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Altura</mat-label>
+                <input
+                  id="altura"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 180"
+                  name="altura"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">cm</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Temperatura :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Temperatura</mat-label>
+                <input
+                  id="gradosC"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 40"
+                  name="gradosC"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">ºC</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Presion :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Presion</mat-label>
+                <input
+                  id="presion"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 40"
+                  name="presion"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">mmHg</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Grupo Sanguineo :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field
+                appearance="fill"
+                class="modal-container__inputs--width"
+              >
+                <mat-label>Grupo Sanguineo</mat-label>
+                <mat-select [(ngModel)]="selectedValueCombobox" name="sangre">
+                  <mat-option
+                    *ngFor="let item of grupoSanguineo"
+                    [value]="item"
+                  >
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad"></div>
+          </div>
+          <!-- 
+  <div class="modal-container__button">
+    <button mat-raised-button class="button__large-button">Ingresar</button>
+  </div> -->
+        </form>
+      </div>
+      <div class="card-datos-medicos__columna" fxFlex="50"></div>
+    </div>
+  </div>
+  <div class="card-datos-medicos__titulo">* Antecedentes</div>
+  <div class="card-datos-medicos__container">
+    <div class="card-datos-medicos__diagnostico">
+      <span class="card-datos-medicos__informacion--subtitulo">
+        Detalle de Diagnostico :
+      </span>
+      <div class="card-datos-medicos__informacion--diagnostico">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat inventore
+        sequi tempora nisi aliquam ducimus eveniet accusamus doloremque
+        blanditiis consequatur maiores veritatis sint perferendis. Iusto quidem
+        dicta officia eum quos. Provident ipsam maxime asperiores pariatur
+        deserunt eligendi magni nihil est praesentium veritatis!
+      </div>
+    </div>
+  </div>
+</div>
