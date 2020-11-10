@@ -17,3 +17,15 @@
     width: 35rem;
   }
 }
+.image-datos {
+  //background-color: red;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__big {
+    width: 35rem;
+    height: 35rem;
+    //height: 100%;
+  }
+}

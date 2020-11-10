@@ -19,6 +19,12 @@
     color: $color-primary-blue;
     border-radius: 2rem !important;
     width: 25rem;
+    &--primary {
+      background-color: $color-primary-blue !important;
+      color: $color-primary-white;
+      border-radius: 2rem !important;
+      width: 25rem;
+    }
   }
 }
 

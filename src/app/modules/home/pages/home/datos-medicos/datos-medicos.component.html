@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
       <div class="title__text">Datos Medicos</div>
@@ -9,6 +9,9 @@
   <div class="card-datos-medicos__container">
     <div class="" fxLayout="row">
       <div class="card-datos-medicos__columna" fxFlex="50">
+        <div class="card-datos-medicos__subtitulo-compuesto">
+          <div class="card-datos-medicos__subtitulo-button">Datos</div>
+        </div>
         <form>
           <div class="card-datos-medicos__informacion">
             <div class="card-datos-medicos__informacion--subtitulo">Peso :</div>
@@ -102,28 +105,104 @@
             </div>
             <div class="card-datos-medicos__informacion--unidad"></div>
           </div>
-          <!-- 
-  <div class="modal-container__button">
-    <button mat-raised-button class="button__large-button">Ingresar</button>
-  </div> -->
+
+          <div class="u__flex--center">
+            <button mat-raised-button class="button__large-button--primary">
+              Guardar
+            </button>
+          </div>
         </form>
       </div>
-      <div class="card-datos-medicos__columna" fxFlex="50"></div>
+      <div fxFlex="50">
+        <div class="image-datos">
+          <img
+            [src]="datosGeneralesImage"
+            alt="medicalnowlogo"
+            class="image-datos__big"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div class="card-datos-medicos__titulo">* Antecedentes</div>
+
+  <div class="card-datos-medicos__container mb-5">
+    <div class="" fxLayout="row">
+      <div fxFlex="50">
+        <div class="image-datos">
+          <img
+            [src]="alergiasImage"
+            alt="medicalnowlogo"
+            class="image-datos__big"
+          />
+        </div>
+      </div>
+      <div class="" fxFlex="50">
+        <div class="card-datos-medicos__subtitulo-compuesto">
+          <div class="card-datos-medicos__subtitulo-button">Alergias</div>
+          <button mat-mini-fab class="circle-button--primary">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        <div class="" *ngFor="let item of alergiasItems; let i = index">
+          <mat-form-field class="modal-container__inputs--width">
+            <mat-label>Alergia</mat-label>
+            <input
+              id="alergia"
+              class="input-form"
+              matInput
+              placeholder="alergia"
+              name="alergia"
+              [(ngModel)]="alergiasItems[i]"
+            />
+          </mat-form-field>
+        </div>
+        <div class="u__flex--center">
+          <button mat-raised-button class="button__large-button--primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="card-datos-medicos__container">
-    <div class="card-datos-medicos__diagnostico">
-      <span class="card-datos-medicos__informacion--subtitulo">
-        Detalle de Diagnostico :
-      </span>
-      <div class="card-datos-medicos__informacion--diagnostico">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat inventore
-        sequi tempora nisi aliquam ducimus eveniet accusamus doloremque
-        blanditiis consequatur maiores veritatis sint perferendis. Iusto quidem
-        dicta officia eum quos. Provident ipsam maxime asperiores pariatur
-        deserunt eligendi magni nihil est praesentium veritatis!
+    <div class="" fxLayout="row">
+      <div class="" fxFlex="50">
+        <div class="card-datos-medicos__subtitulo-compuesto">
+          <div class="card-datos-medicos__subtitulo-button">
+            Diagnosticos Previos
+          </div>
+          <button mat-mini-fab class="circle-button--primary">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        <div class="" *ngFor="let item of enfermedadesItems; let i = index">
+          <mat-form-field class="modal-container__inputs--width">
+            <mat-label>Diagnosticos Previos</mat-label>
+            <input
+              id="alergia"
+              class="input-form"
+              matInput
+              placeholder="alergia"
+              name="alergia"
+              [(ngModel)]="enfermedadesItems[i]"
+            />
+          </mat-form-field>
+        </div>
+        <div class="u__flex--center">
+          <button mat-raised-button class="button__large-button--primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+      <div fxFlex="50">
+        <div class="image-datos">
+          <img
+            [src]="diagnosticosImage"
+            alt="medicalnowlogo"
+            class="image-datos__big"
+          />
+        </div>
       </div>
     </div>
   </div>

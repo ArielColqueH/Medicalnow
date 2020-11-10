@@ -6,6 +6,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./datos-medicos.component.scss"],
 })
 export class DatosMedicosComponent implements OnInit {
+  datosGeneralesImage: string = "assets/images/datosgenerales.png";
+  alergiasImage: string = "assets/images/alergias.png";
+  diagnosticosImage: string = "assets/images/diagnosticosPrevios.png";
   selectedValueCombobox: string;
   grupoSanguineo: string[] = [
     "O negativo",
@@ -17,6 +20,8 @@ export class DatosMedicosComponent implements OnInit {
     "AB negativo",
     "AB positivo",
   ];
+  alergiasItems: string[] = ["pescado", "huevos", "coservantes"];
+  enfermedadesItems: string[] = ["hipertension", "diabetes", "presion alta"];
   constructor() {}
 
   ngOnInit() {}
