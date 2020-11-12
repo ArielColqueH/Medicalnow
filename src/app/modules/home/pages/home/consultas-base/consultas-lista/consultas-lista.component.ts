@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ConsultasService } from "src/app/core/http/services/consultas.service";
 import { Consults } from "src/app/models/Consults";
+import { CobroConsultaComponent } from "src/app/modules/dialogs/cobro-consulta/cobro-consulta.component";
 
 @Component({
   selector: "app-consultas-lista",
@@ -12,7 +14,8 @@ export class ConsultasListaComponent implements OnInit {
   constructor(
     private _router: Router,
     private _route: ActivatedRoute,
-    private _service: ConsultasService
+    private _service: ConsultasService,
+    public dialog: MatDialog
   ) {}
 
   consultas: Consults[];

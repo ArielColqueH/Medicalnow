@@ -1,0 +1,56 @@
+<div class="dialog__container">
+  <mat-dialog-content>
+    <div class="dialog__subtitle">
+      <div class="dialog__subtitle-content">
+        <div class="dialog__subtitle-text">Cobro por consulta</div>
+        <div class="dialog__subtitle-button"></div>
+      </div>
+      <div class="dialog__subtitle-line"></div>
+    </div>
+    <p class="dialog__text">
+      Esta seguro de solicitar los servicios de
+      <span class="dialog__bold">Ariel Colque Herrera</span> con la especialidad
+      de <span class="dialog__bold">Odontologia</span> con una puntuacion de
+      <span class="dialog__bold">5 estrellas</span>.
+    </p>
+    <p class="dialog__precio-costo">
+      Costo : <span class="dialog__precio-dinero"> 100 Bs</span>
+    </p>
+    <div class="dialog__subtitle">
+      <div class="dialog__subtitle-content">
+        <div class="dialog__subtitle-text">Pagos</div>
+        <div class="dialog__subtitle-button"></div>
+      </div>
+      <div class="dialog__subtitle-line"></div>
+    </div>
+    <mat-form-field class="dialog__form-field">
+      <input type="number" matInput placeholder="4494 9955 1234" />
+      <mat-icon matSuffix>credit_card</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="dialog__form-field">
+      <input type="text" matInput placeholder="Juan Mamani" />
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <div class="" fxLayout="row">
+      <mat-form-field class="dialog__form-field mr-1" fxFlex="50">
+        <input type="number" matInput placeholder="11/2020" />
+        <mat-icon matSuffix>date_range</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="dialog__form-field ml-1" fxFlex="50">
+        <input type="number" matInput placeholder="CVV" />
+        <mat-icon matSuffix>lock_outline</mat-icon>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-button
+      [mat-dialog-close]="true"
+      class="button__dialog--positive"
+      cdkFocusInitial
+    >
+      Pagar
+    </button>
+  </mat-dialog-actions>
+</div>

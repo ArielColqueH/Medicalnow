@@ -54,4 +54,29 @@
     //background-color: green;
     margin-right: 0.5rem;
   }
+  &__text {
+    margin: 2rem 0;
+    text-align: justify;
+  }
+
+  &__bold {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  &__precio-costo {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 3.5rem;
+  }
+  &__precio-dinero {
+    color: $color-primary-blue;
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin-left: 1rem;
+  }
+
+  &__form-field {
+    width: 100%;
+  }
 }

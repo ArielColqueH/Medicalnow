@@ -8,6 +8,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { SpecialtyModel } from "src/app/models/specialty-model";
 import { HostListener } from "@angular/core";
 import { DoctorSpecialtyJson } from "src/app/models/DoctorSpecialtyJson";
+import { CobroConsultaComponent } from "src/app/modules/dialogs/cobro-consulta/cobro-consulta.component";
 
 @Component({
   selector: "app-lista-especialistas",
@@ -39,5 +40,16 @@ export class ListaEspecialistasComponent implements OnInit {
     this._router.navigate([
       "consultas/" + localStorage.getItem("userId") + "/consulta-individual",
     ]);
+  }
+
+  solicitarConsulta() {
+    const dialogRef = this.dialog.open(CobroConsultaComponent, {
+      width: "600px",
+      // data: { id: this.id },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
