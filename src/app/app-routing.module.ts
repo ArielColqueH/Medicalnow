@@ -4,6 +4,8 @@ import { AuthGuard } from "./core/auth/guards/auth.guard";
 import { MainComponent } from "./layout/main/main.component";
 import { AsistenciaBaseComponent } from "./modules/home/pages/home/asistencia-base/asistencia-base.component";
 import { AsistenciaMedicaComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/asistencia-medica.component";
+import { ListaEspecialidadesGratuitasComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades-gratuitas/lista-especialidades-gratuitas.component";
+import { ListaEspecialistasGratisComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades-gratuitas/lista-especialistas-gratis/lista-especialistas-gratis.component";
 import { ListaEspecialidadesComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialidades.component";
 import { ListaEspecialistasComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialistas/lista-especialistas.component";
 
@@ -55,6 +57,19 @@ const routes: Routes = [
               {
                 path: "lista-especialistas/:id",
                 component: ListaEspecialistasComponent,
+              },
+            ],
+          },
+          {
+            path: "lista-especialidades-gratuitas",
+            children: [
+              {
+                path: "",
+                component: ListaEspecialidadesGratuitasComponent,
+              },
+              {
+                path: "lista-especialistas-gratis/:id",
+                component: ListaEspecialistasGratisComponent,
               },
             ],
           },

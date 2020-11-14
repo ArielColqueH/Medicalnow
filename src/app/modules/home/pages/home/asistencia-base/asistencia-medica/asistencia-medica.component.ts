@@ -11,6 +11,7 @@ import { AuthService } from "src/app/core/auth/auth.service";
 export class AsistenciaMedicaComponent implements OnInit {
   medicoGeneralImage: string = "assets/images/doctor.png";
   especialistaImage: string = "assets/images/stethoscope.png";
+  especialistaImage2: string = "assets/images/clock-regular.svg";
   message: String = "link";
   nombrePaciente: string = "Mariana";
   constructor(
@@ -35,5 +36,10 @@ export class AsistenciaMedicaComponent implements OnInit {
   irMedicoEspecialista() {
     console.log("especialista");
     this._router.navigate(["lista-especialidades"], { relativeTo: this.route });
+  }
+  irMedicoEspecialistaGratis() {
+    this._router.navigate(["lista-especialidades-gratuitas"], {
+      relativeTo: this.route,
+    });
   }
 }

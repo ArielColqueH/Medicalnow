@@ -1,0 +1,28 @@
+<div class="dialog__container">
+  <mat-dialog-content>
+    <div class="dialog__subtitle">
+      <div class="dialog__subtitle-content">
+        <div class="dialog__subtitle-text">Puntuacion</div>
+        <div class="dialog__subtitle-button"></div>
+      </div>
+      <div class="dialog__subtitle-line"></div>
+    </div>
+    <p class="dialog__text">
+      Asigne una puntuacion por todo el servicio que el doctor especilista le
+      brindo. Sea sincero por favor ya que estos datos pasan a afectar la
+      puntuacion general del doctor. Muchas gracias
+    </p>
+    <div style="text-align: center">
+      <h1>Puntuacion</h1>
+      <star-rating
+        value="5"
+        totalstars="5"
+        checkedcolor="#19d3da"
+        uncheckedcolor="gray"
+        size="60px"
+        readonly="false"
+        (rate)="onRate($event)"
+      ></star-rating>
+    </div>
+  </mat-dialog-content>
+</div>

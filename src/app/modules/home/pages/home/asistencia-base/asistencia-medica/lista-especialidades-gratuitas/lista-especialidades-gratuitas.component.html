@@ -1,0 +1,78 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">
+        Todas nuestras especialidades disponibles <strong>GRATIS !!!</strong>
+      </div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="mt-5 mb-5">
+    <div fxLayout="row" fxLayoutAlign="space-evenly ">
+      <div fxLayout="column">
+        <div class="" *ngFor="let item of listaEspecialidades; let i = index">
+          <ng-container *ngIf="i % 2 == 0">
+            <div
+              class="card-lista-especialidades"
+              (click)="irListaEspecialistas(item.specialtyId)"
+            >
+              <div class="card-lista-especialidades__img">
+                <div class="card-lista-especialidades__img-overlay">
+                  <div class="card-lista-especialidades__contenido">
+                    <div class="card-lista-especialidades__detalle-numero">
+                      <mat-icon
+                        class="card-lista-especialidades__detalle-numero--icono"
+                      >
+                        people
+                      </mat-icon>
+                      <div
+                        class="card-lista-especialidades__detalle-numero--numero"
+                      >
+                        {{ item.specialtyQuantity }}
+                      </div>
+                    </div>
+                    <div class="card-lista-especialidades__nombre-especialidad">
+                      {{ item.specialtyName }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div fxLayout="column">
+        <div class="" *ngFor="let item of listaEspecialidades; let i = index">
+          <ng-container *ngIf="i % 2 == 1">
+            <div
+              class="card-lista-especialidades"
+              (click)="irListaEspecialistas(item.specialtyId)"
+            >
+              <div class="card-lista-especialidades__img">
+                <div class="card-lista-especialidades__img-overlay">
+                  <div class="card-lista-especialidades__contenido">
+                    <div class="card-lista-especialidades__detalle-numero">
+                      <mat-icon
+                        class="card-lista-especialidades__detalle-numero--icono"
+                      >
+                        people
+                      </mat-icon>
+                      <div
+                        class="card-lista-especialidades__detalle-numero--numero"
+                      >
+                        {{ item.specialtyQuantity }}
+                      </div>
+                    </div>
+                    <div class="card-lista-especialidades__nombre-especialidad">
+                      {{ item.specialtyName }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

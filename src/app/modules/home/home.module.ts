@@ -41,7 +41,9 @@ import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consult
 import { PrescripcionesBaseComponent } from "./pages/home/prescripciones-base/prescripciones-base.component";
 import { PrescripcionesComponent } from "./pages/home/prescripciones-base/prescripciones/prescripciones.component";
 import { PrescripcionDetalleComponent } from "./pages/home/prescripciones-base/prescripciones/prescripcion-detalle/prescripcion-detalle.component";
-import { DatosMedicosComponent } from './pages/home/datos-medicos/datos-medicos.component';
+import { DatosMedicosComponent } from "./pages/home/datos-medicos/datos-medicos.component";
+import { ListaEspecialidadesGratuitasComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades-gratuitas/lista-especialidades-gratuitas.component";
+import { ListaEspecialistasGratisComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades-gratuitas/lista-especialistas-gratis/lista-especialistas-gratis.component";
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { DatosMedicosComponent } from './pages/home/datos-medicos/datos-medicos.
     PrescripcionesComponent,
     PrescripcionDetalleComponent,
     DatosMedicosComponent,
+    ListaEspecialidadesGratuitasComponent,
+    ListaEspecialistasGratisComponent,
   ],
   imports: [
     CommonModule,

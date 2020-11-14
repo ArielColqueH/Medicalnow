@@ -7,9 +7,17 @@ import { DetallePrescripcionComponent } from "./detalle-prescripcion/detalle-pre
 import { FormsModule } from "@angular/forms";
 import { CobroConsultaComponent } from "./cobro-consulta/cobro-consulta.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ConsultaGratisComponent } from "./consulta-gratis/consulta-gratis.component";
+import { DarPuntuacionComponent } from "./dar-puntuacion/dar-puntuacion.component";
+import { RatingModule } from "ng-starrating";
 
 @NgModule({
-  declarations: [DetallePrescripcionComponent, CobroConsultaComponent],
+  declarations: [
+    DetallePrescripcionComponent,
+    CobroConsultaComponent,
+    ConsultaGratisComponent,
+    DarPuntuacionComponent,
+  ],
   imports: [
     CommonModule,
     MatDialogModule,
@@ -18,7 +26,13 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatInputModule,
     FormsModule,
     FlexLayoutModule,
+    RatingModule,
   ],
-  entryComponents: [DetallePrescripcionComponent, CobroConsultaComponent],
+  entryComponents: [
+    DetallePrescripcionComponent,
+    CobroConsultaComponent,
+    ConsultaGratisComponent,
+    DarPuntuacionComponent,
+  ],
 })
 export class DialogsModule {}

@@ -12,6 +12,16 @@
     fxLayoutAlign="space-evenly center"
     class="mt-9"
   >
+    <div class="card-asistencia" (click)="irMedicoEspecialistaGratis()">
+      <div class="card-asistencia__titulo">Consulta Rapida</div>
+      <div class="card-asistencia__container">
+        <img
+          [src]="especialistaImage2"
+          alt="doctor"
+          class="card-asistencia__logo"
+        />
+      </div>
+    </div>
     <div class="card-asistencia" (click)="irMedicoGeneral()">
       <div class="card-asistencia__titulo">Medico General</div>
       <div class="card-asistencia__container">

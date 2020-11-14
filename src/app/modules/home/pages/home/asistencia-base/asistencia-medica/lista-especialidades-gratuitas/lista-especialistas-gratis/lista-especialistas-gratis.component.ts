@@ -9,13 +9,13 @@ import { SpecialtyModel } from "src/app/models/specialty-model";
 import { HostListener } from "@angular/core";
 import { DoctorSpecialtyJson } from "src/app/models/DoctorSpecialtyJson";
 import { CobroConsultaComponent } from "src/app/modules/dialogs/cobro-consulta/cobro-consulta.component";
-
+import { ConsultaGratisComponent } from "src/app/modules/dialogs/consulta-gratis/consulta-gratis.component";
 @Component({
-  selector: "app-lista-especialistas",
-  templateUrl: "./lista-especialistas.component.html",
-  styleUrls: ["./lista-especialistas.component.scss"],
+  selector: "app-lista-especialistas-gratis",
+  templateUrl: "./lista-especialistas-gratis.component.html",
+  styleUrls: ["./lista-especialistas-gratis.component.scss"],
 })
-export class ListaEspecialistasComponent implements OnInit {
+export class ListaEspecialistasGratisComponent implements OnInit {
   listaEspecialista = new DoctorSpecialtyJson();
   id: string = "";
 
@@ -43,7 +43,7 @@ export class ListaEspecialistasComponent implements OnInit {
   }
 
   solicitarConsulta(doctorSpecialtyId: number) {
-    const dialogRef = this.dialog.open(CobroConsultaComponent, {
+    const dialogRef = this.dialog.open(ConsultaGratisComponent, {
       width: "600px",
       data: { doctorSpecialtyId: doctorSpecialtyId },
     });

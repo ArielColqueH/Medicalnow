@@ -6,11 +6,11 @@ import { SpecialtiesService } from "src/app/core/http/services/specialties.servi
 import { ListaEspecialidades } from "src/app/models/ListaEspecialidades";
 import { SpecialtyModel } from "src/app/models/specialty-model";
 @Component({
-  selector: "app-lista-especialidades",
-  templateUrl: "./lista-especialidades.component.html",
-  styleUrls: ["./lista-especialidades.component.scss"],
+  selector: "app-lista-especialidades-gratuitas",
+  templateUrl: "./lista-especialidades-gratuitas.component.html",
+  styleUrls: ["./lista-especialidades-gratuitas.component.scss"],
 })
-export class ListaEspecialidadesComponent implements OnInit {
+export class ListaEspecialidadesGratuitasComponent implements OnInit {
   listaEspecialidades: SpecialtyModel[];
   //aux: any;
 
@@ -33,13 +33,8 @@ export class ListaEspecialidadesComponent implements OnInit {
 
   irListaEspecialistas(id: number) {
     console.log(id);
-    this._router.navigate(["lista-especialistas/" + id], {
+    this._router.navigate(["lista-especialistas-gratis/" + id], {
       relativeTo: this.route,
     });
   }
-
-  // @HostListener("window:beforeunload", ["$event"])
-  // clearLocalStorage(event) {
-  //   localStorage.clear();
-  // }
 }
