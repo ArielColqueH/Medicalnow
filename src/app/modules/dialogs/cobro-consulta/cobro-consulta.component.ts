@@ -2,8 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { Inject } from "@angular/core";
 import { MAT_DIALOG_DATA } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
+import { EspecialistaIndividualService } from "src/app/core/http/services/especialista-individual.service";
 import { SpecialtieslistService } from "src/app/core/http/services/specialtieslist.service";
 import { DoctorSpecialtyJson } from "src/app/models/DoctorSpecialtyJson";
+import { PaymentModel } from "src/app/models/payment-model";
 @Component({
   selector: "app-cobro-consulta",
   templateUrl: "./cobro-consulta.component.html",
@@ -11,21 +13,21 @@ import { DoctorSpecialtyJson } from "src/app/models/DoctorSpecialtyJson";
 })
 export class CobroConsultaComponent implements OnInit {
   aux = this.data.doctorSpecialtyId;
-  listaEspecialista = new DoctorSpecialtyJson();
+  payment = new PaymentModel();
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _service: SpecialtieslistService,
+    private _service: EspecialistaIndividualService,
     private _router: Router,
     private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     //console.log(this.data);
-    //this.ObtenerDatos();
+    this.ObtenerDatos();
   }
-  // ObtenerDatos() {
-  //   this._service
-  //     .listSpecialties(this._route.snapshot.paramMap.get("id"))
-  //     .subscribe((data) => (this.listaEspecialista = data));
-  // }
+  ObtenerDatos() {
+    this._service
+      .getInformacionEspecialista(this.aux)
+      .subscribe((data) => (this.payment = data));
+  }
 }
