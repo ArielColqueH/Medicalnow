@@ -21,6 +21,9 @@ export class DetallePrescripcionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // console.log(
+    //   "TAMANO DE ARREGLO : " + this.descriptionDetail.prescription_detail.length
+    // );
     this.ObtenerDatos();
   }
 
