@@ -12,27 +12,33 @@
         Nombre Completo :
       </div>
       <div class="card-historial-completo__informacion--titulo">
-        Ariel Colque Herrera
+        {{ historialMedico.patient_data.firstName }}
+        {{ historialMedico.patient_data.firstSurname }}
+        {{ historialMedico.patient_data.secondSurname }}
       </div>
     </div>
     <div class="card-historial-completo__informacion">
       <div class="card-historial-completo__informacion--subtitulo">
         Fecha de Nacimiento :
       </div>
-      <div class="card-historial-completo__informacion--titulo">02/02/2020</div>
+      <div class="card-historial-completo__informacion--titulo">
+        {{ historialMedico.patient_data.birthDate }}
+      </div>
     </div>
     <div class="card-historial-completo__informacion">
       <div class="card-historial-completo__informacion--subtitulo">
         Numero de Celular :
       </div>
-      <div class="card-historial-completo__informacion--titulo">76743310</div>
+      <div class="card-historial-completo__informacion--titulo">
+        {{ historialMedico.patient_data.phoneNumber }}
+      </div>
     </div>
     <div class="card-historial-completo__informacion">
       <div class="card-historial-completo__informacion--subtitulo">
         Correo Electronico :
       </div>
       <div class="card-historial-completo__informacion--titulo">
-        ariel@gmail.com
+        {{ historialMedico.patient_data.email }}
       </div>
     </div>
   </div>
@@ -43,12 +49,7 @@
         Detalle de Diagnostico :
       </span>
       <div class="card-historial-completo__informacion--diagnostico">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat inventore
-        sequi tempora nisi aliquam ducimus eveniet accusamus doloremque
-        blanditiis consequatur maiores veritatis sint perferendis. Iusto quidem
-        dicta officia eum quos. Provident ipsam maxime asperiores pariatur
-        deserunt eligendi magni nihil est praesentium veritatis!
+        {{ historialMedico.diagnosis.diagnosis }}
       </div>
     </div>
   </div>
