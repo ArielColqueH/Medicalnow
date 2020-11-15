@@ -84,7 +84,7 @@ const routes: Routes = [
             component: PrescripcionesComponent,
           },
           {
-            path: "prescripciones-detalle",
+            path: "prescripciones-detalle/:id",
             children: [
               {
                 path: "",

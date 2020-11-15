@@ -140,22 +140,35 @@
       <div class="" fxFlex="50">
         <div class="card-datos-medicos__subtitulo-compuesto">
           <div class="card-datos-medicos__subtitulo-button">Alergias</div>
-          <button mat-mini-fab class="circle-button--primary">
+          <button
+            mat-mini-fab
+            class="circle-button--primary"
+            (click)="agregarAlergias()"
+          >
             <mat-icon>add</mat-icon>
           </button>
         </div>
         <div class="" *ngFor="let item of alergiasItems; let i = index">
-          <mat-form-field class="modal-container__inputs--width">
-            <mat-label>Alergia</mat-label>
-            <input
-              id="alergia"
-              class="input-form"
-              matInput
-              placeholder="alergia"
-              name="alergia"
-              [(ngModel)]="alergiasItems[i]"
-            />
-          </mat-form-field>
+          <div class="u__flex--space-between">
+            <mat-form-field class="modal-container__inputs--width">
+              <mat-label>Alergia</mat-label>
+              <input
+                id="alergia"
+                class="input-form"
+                matInput
+                placeholder="alergia"
+                name="alergia{{ i }}"
+                [(ngModel)]="alergiasItems[i]"
+              />
+            </mat-form-field>
+            <button
+              mat-mini-fab
+              class="circle-button--delete circle-button__chat"
+              (click)="eliminarAlergia(i)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </div>
         <div class="u__flex--center">
           <button mat-raised-button class="button__large-button--primary">
@@ -172,25 +185,42 @@
           <div class="card-datos-medicos__subtitulo-button">
             Diagnosticos Previos
           </div>
-          <button mat-mini-fab class="circle-button--primary">
+          <button
+            mat-mini-fab
+            class="circle-button--primary"
+            (click)="guardarAlergias()"
+          >
             <mat-icon>add</mat-icon>
           </button>
         </div>
         <div class="" *ngFor="let item of enfermedadesItems; let i = index">
-          <mat-form-field class="modal-container__inputs--width">
-            <mat-label>Diagnosticos Previos</mat-label>
-            <input
-              id="alergia"
-              class="input-form"
-              matInput
-              placeholder="alergia"
-              name="alergia"
-              [(ngModel)]="enfermedadesItems[i]"
-            />
-          </mat-form-field>
+          <div class="u__flex--space-between">
+            <mat-form-field class="modal-container__inputs--width">
+              <mat-label>Diagnosticos Previos</mat-label>
+              <input
+                id="alergia"
+                class="input-form"
+                matInput
+                placeholder="diagnosticos"
+                name="diagnosticos{{ i }}"
+                [(ngModel)]="enfermedadesItems[i]"
+              />
+            </mat-form-field>
+            <button
+              mat-mini-fab
+              class="circle-button--delete circle-button__chat"
+              (click)="eliminarDiagnosticos(i)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </div>
         <div class="u__flex--center">
-          <button mat-raised-button class="button__large-button--primary">
+          <button
+            mat-raised-button
+            class="button__large-button--primary"
+            (click)="guardarDiagnosticos()"
+          >
             Guardar
           </button>
         </div>

@@ -40,8 +40,8 @@ export class PrescripcionesComponent implements OnInit {
     this.ObtenerDatos();
   }
 
-  irRecetas() {
-    this._router.navigate(["prescripciones-detalle"], {
+  irRecetas(consultId: number) {
+    this._router.navigate(["prescripciones-detalle/" + consultId], {
       relativeTo: this.route,
     });
   }

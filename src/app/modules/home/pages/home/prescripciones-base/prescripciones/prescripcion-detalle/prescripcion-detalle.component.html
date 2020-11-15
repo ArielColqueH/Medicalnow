@@ -2,7 +2,11 @@
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
       <!--<div class="title__text">Prescripciones | Especialidad {{listaPrescription.specialtyName}}</div>-->
-      <div class="title__text">Prescripciones | Especialidad</div>
+      <div class="title__text">
+        Prescripciones | Especialidad :{{
+          listaPrescriptionDetail.specialty_name
+        }}
+      </div>
       <div class="title__row"></div>
     </div>
   </div>
@@ -11,10 +15,10 @@
     <div class="card-lista-prescripcion__button">Acciones</div>
   </div>
   <!-- <div *ngFor="let item of listaPrescription.body; let i = index">-->
-  <div *ngFor="let item of prescripction; let i = index">
+  <div *ngFor="let item of listaPrescriptionDetail.content; let i = index">
     <div class="card-lista-prescripcion card-lista-prescripcion--row">
       <div class="card-lista-prescripcion__fecha">
-        {{ item.date }}
+        {{ item.prescriptionDate }}
       </div>
       <div class="card-lista-prescripcion__button">
         <button
