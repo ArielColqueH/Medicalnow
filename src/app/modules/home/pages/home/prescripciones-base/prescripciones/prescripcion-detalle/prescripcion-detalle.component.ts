@@ -29,11 +29,10 @@ export class PrescripcionDetalleComponent implements OnInit {
     this.ObtenerDatos();
   }
 
-  openDialog(id: number) {
-    console.log(id);
+  openDialog(prescriptionid: number) {
     const dialogRef = this.dialog.open(DetallePrescripcionComponent, {
       width: "600px",
-      // data: { id: this.id },
+      data: { prescriptionId: prescriptionid },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

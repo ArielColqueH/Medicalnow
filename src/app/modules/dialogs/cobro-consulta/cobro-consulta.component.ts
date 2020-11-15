@@ -22,7 +22,6 @@ export class CobroConsultaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //console.log(this.data);
     this.ObtenerDatos();
   }
   ObtenerDatos() {
