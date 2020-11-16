@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from '@angular/router';
-import { DatosMedicosService } from 'src/app/core/http/services/datos-medicos.service';
-import { DatosMedicos } from 'src/app/models/datos-medicos';
+import { ActivatedRoute, Router } from "@angular/router";
+import { DatosMedicosService } from "src/app/core/http/services/datos-medicos.service";
+import { AlergiaItem } from "src/app/models/AlergiaItem";
+import { DatosMedicos } from "src/app/models/datos-medicos";
+import { EnfermedadItem } from "src/app/models/Enfermedaditem";
 
 @Component({
   selector: "app-datos-medicos",
@@ -12,7 +14,6 @@ export class DatosMedicosComponent implements OnInit {
   datosGeneralesImage: string = "assets/images/datosgenerales.png";
   alergiasImage: string = "assets/images/alergias.png";
   diagnosticosImage: string = "assets/images/diagnosticosPrevios.png";
-
 
   datos = new DatosMedicos();
   grupoSanguineo: string[] = [
@@ -25,39 +26,43 @@ export class DatosMedicosComponent implements OnInit {
     "AB negativo",
     "AB positivo",
   ];
-  
-  constructor(private _service: DatosMedicosService,
+
+  constructor(
+    private _service: DatosMedicosService,
     private _router: Router,
-    private route: ActivatedRoute) {}
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {}
 
-  
-
-
-  registerDatosMedicos(){
+  registerDatosMedicos() {
+    //console.log(this.datos);
     this._service.registerMedicalData(this.datos).subscribe(
-      
-      (data)=>{
-        console.log("Datos actualizados")
+      (data) => {
+        console.log("Datos actualizados");
       },
-      (error) =>{
+      (error) => {
         console.log("exception ocurred");
       }
-    )
+    );
   }
-  alergiasItems: string[] = [];
-  enfermedadesItems: string[] = [];
+
+  alergiasItems: AlergiaItem[] = [];
+  enfermedadesItems: EnfermedadItem[] = [];
 
   agregarAlergias() {
-    var alergiaAux = "";
+    var alergiaAux = {
+      nombreAlergia: "",
+    };
     this.alergiasItems.push(alergiaAux);
   }
   eliminarAlergia(alergiaId: number) {
     this.alergiasItems.splice(alergiaId, 1);
   }
   agregarDiagnosticos() {
-    var diagnosticosAux = "";
+    var diagnosticosAux = {
+      nombreEnfermedad: "",
+    };
     this.enfermedadesItems.push(diagnosticosAux);
   }
   eliminarDiagnosticos(diagnosticoId: number) {
@@ -65,13 +70,12 @@ export class DatosMedicosComponent implements OnInit {
   }
   guardarAlergias() {
     this.alergiasItems.forEach((element) => {
-      console.log();
+      console.log(element);
     });
   }
   guardarDiagnosticos() {
-    this.enfermedadesItems.forEach((element) => {
-      console.log();
-    });
+    for (var i = 0; i < this.enfermedadesItems.length; i++) {
+      console.log(this.enfermedadesItems[i]);
+    }
   }
-
 }

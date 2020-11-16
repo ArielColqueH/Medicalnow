@@ -25,8 +25,19 @@ export class CobroConsultaComponent implements OnInit {
     this.ObtenerDatos();
   }
   ObtenerDatos() {
+    console.log("consultId : " + this.data.doctorSpecialtyId);
     this._service
       .getInformacionEspecialista(this.aux)
       .subscribe((data) => (this.payment = data));
+  }
+  pagarConsulta() {
+    this._router.navigate(
+      [
+        "consultas/" +
+          localStorage.getItem("userId") +
+          "/consultas-individual/",
+      ],
+      {}
+    );
   }
 }

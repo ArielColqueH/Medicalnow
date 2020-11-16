@@ -11,4 +11,8 @@ export class ConsultaGratisComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  pagarConsulta() {
+    console.log("pagar");
+  }
 }

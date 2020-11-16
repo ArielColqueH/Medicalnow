@@ -12,7 +12,7 @@
         <div class="card-datos-medicos__subtitulo-compuesto">
           <div class="card-datos-medicos__subtitulo-button">Datos</div>
         </div>
-        <form (ngSubmit)="registerDatosMedicos()"> 
+        <form>
           <div class="card-datos-medicos__informacion">
             <div class="card-datos-medicos__informacion--subtitulo">Peso :</div>
             <div class="card-datos-medicos__informacion--titulo">
@@ -97,9 +97,8 @@
                 class="modal-container__inputs--width"
               >
                 <mat-label>Grupo Sanguineo</mat-label>
-                <mat-select  [(ngModel)]="datos.bloodGroup" name="bloodGroup">
+                <mat-select [(ngModel)]="datos.bloodGroup" name="bloodGroup">
                   <mat-option
-                   
                     *ngFor="let item of grupoSanguineo"
                     [value]="item"
                   >
@@ -112,7 +111,11 @@
           </div>
 
           <div class="u__flex--center">
-            <button mat-raised-button class="button__large-button--primary">
+            <button
+              mat-raised-button
+              class="button__large-button--primary"
+              (click)="registerDatosMedicos()"
+            >
               Guardar
             </button>
           </div>
@@ -158,12 +161,11 @@
             <mat-form-field class="modal-container__inputs--width">
               <mat-label>Alergia</mat-label>
               <input
-                id="alergia"
                 class="input-form"
                 matInput
                 placeholder="alergia"
                 name="alergia{{ i }}"
-                [(ngModel)]="alergiasItems[i]"
+                [(ngModel)]="item.nombreAlergia"
               />
             </mat-form-field>
             <button
@@ -176,7 +178,11 @@
           </div>
         </div>
         <div class="u__flex--center">
-          <button mat-raised-button class="button__large-button--primary">
+          <button
+            mat-raised-button
+            class="button__large-button--primary"
+            (click)="guardarAlergias()"
+          >
             Guardar
           </button>
         </div>
@@ -203,12 +209,11 @@
             <mat-form-field class="modal-container__inputs--width">
               <mat-label>Diagnosticos Previos</mat-label>
               <input
-                id="diagnosticos"
                 class="input-form"
                 matInput
                 placeholder="diagnosticos"
                 name="diagnosticos{{ i }}"
-                [(ngModel)]="enfermedadesItems[i]"
+                [(ngModel)]="item.nombreEnfermedad"
               />
             </mat-form-field>
             <button

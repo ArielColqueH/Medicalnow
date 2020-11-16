@@ -9,7 +9,7 @@
     </div>
     <p class="dialog__text">
       Esta seguro de solicitar los servicios de
-      <span class="dialog__bold">{{ aux }}</span> con la especialidad de
+      <span class="dialog__bold">s</span> con la especialidad de
       <span class="dialog__bold">Odontologia</span> con una puntuacion de
       <span class="dialog__bold">5 estrellas</span>.
     </p>
@@ -43,6 +43,7 @@
       [mat-dialog-close]="true"
       class="button__dialog--positive"
       cdkFocusInitial
+      (click)="pagarConsulta()"
     >
       Pagar
     </button>
