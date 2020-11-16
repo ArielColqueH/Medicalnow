@@ -13,30 +13,43 @@
         <textarea
           matInput
           placeholder="Usted debe colocarse la pomada 3 veces al dia"
+          [(ngModel)]="descriptionDetail.description"
+          name="prescriptionDetail"
         ></textarea>
       </mat-form-field>
     </form>
-    <div class="dialog-prescripcion dialog-prescripcion--header">
-      <div class="dialog-prescripcion__nombre-producto">
-        Nombre del Producto
-      </div>
-      <div class="dialog-prescripcion__nombre-detalle">Detalle</div>
-      <div class="dialog-prescripcion__nombre-cantidad">Cantidad</div>
-    </div>
-    <!-- <div class="" *ngFor="let item of prescriptionList; let i = index">
-      <div class="dialog-prescripcion dialog-prescripcion--row">
+    <div
+      class=""
+      *ngIf="this.descriptionDetail.prescription_detail.length !== 0"
+    >
+      <div class="dialog-prescripcion dialog-prescripcion--header">
         <div class="dialog-prescripcion__nombre-producto">
-          {{ item.prescriptionName }}
+          Nombre del Producto
         </div>
-        <div class="dialog-prescripcion__nombre-detalle">
-          {{ item.prescriptionDetail }}
-        </div>
-        <div class="dialog-prescripcion__nombre-cantidad">
-          {{ item.prescriptionQuantity }}
-        </div>
+        <div class="dialog-prescripcion__nombre-detalle">Detalle</div>
+        <div class="dialog-prescripcion__nombre-cantidad">Cantidad</div>
       </div>
-      <div class="dialog__detalle-line"></div>
-    </div> -->
+      <div
+        class=""
+        *ngFor="
+          let item of descriptionDetail.prescription_detail;
+          let i = index
+        "
+      >
+        <div class="dialog-prescripcion dialog-prescripcion--row">
+          <div class="dialog-prescripcion__nombre-producto">
+            {{ item.productName }}
+          </div>
+          <div class="dialog-prescripcion__nombre-detalle">
+            {{ item.productDetail }}
+          </div>
+          <div class="dialog-prescripcion__nombre-cantidad">
+            {{ item.productQtty }}
+          </div>
+        </div>
+        <div class="dialog__detalle-line"></div>
+      </div>
+    </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancelar</button>

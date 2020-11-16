@@ -25,8 +25,7 @@ export class DatosMedicosComponent implements OnInit {
     "AB negativo",
     "AB positivo",
   ];
-  alergiasItems: string[] = ["pescado", "huevos", "coservantes"];
-  enfermedadesItems: string[] = ["hipertension", "diabetes", "presion alta"];
+  
   constructor(private _service: DatosMedicosService,
     private _router: Router,
     private route: ActivatedRoute) {}
@@ -47,4 +46,32 @@ export class DatosMedicosComponent implements OnInit {
       }
     )
   }
+  alergiasItems: string[] = [];
+  enfermedadesItems: string[] = [];
+
+  agregarAlergias() {
+    var alergiaAux = "";
+    this.alergiasItems.push(alergiaAux);
+  }
+  eliminarAlergia(alergiaId: number) {
+    this.alergiasItems.splice(alergiaId, 1);
+  }
+  agregarDiagnosticos() {
+    var diagnosticosAux = "";
+    this.enfermedadesItems.push(diagnosticosAux);
+  }
+  eliminarDiagnosticos(diagnosticoId: number) {
+    this.enfermedadesItems.splice(diagnosticoId, 1);
+  }
+  guardarAlergias() {
+    this.alergiasItems.forEach((element) => {
+      console.log();
+    });
+  }
+  guardarDiagnosticos() {
+    this.enfermedadesItems.forEach((element) => {
+      console.log();
+    });
+  }
+
 }

@@ -9,12 +9,17 @@
     </div>
     <p class="dialog__text">
       Esta seguro de solicitar los servicios de
-      <span class="dialog__bold">Ariel Colque Herrera</span> con la especialidad
-      de <span class="dialog__bold">Odontologia</span> con una puntuacion de
-      <span class="dialog__bold">5 estrellas</span>.
+      <span class="dialog__bold"
+        >{{ payment.firstName }} {{ payment.firstSurname }}
+        {{ payment.secondSurname }}</span
+      >
+      con la especialidad de
+      <span class="dialog__bold">{{ payment.specialtyName }}</span> con una
+      puntuacion de
+      <span class="dialog__bold">{{ payment.qualification }} estrellas</span>.
     </p>
     <p class="dialog__precio-costo">
-      Costo : <span class="dialog__precio-dinero"> 100 Bs</span>
+      Costo : <span class="dialog__precio-dinero"> {{ payment.price }} Bs</span>
     </p>
     <div class="dialog__subtitle">
       <div class="dialog__subtitle-content">

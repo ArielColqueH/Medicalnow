@@ -1,0 +1,50 @@
+<div class="dialog__container">
+  <mat-dialog-content>
+    <div class="dialog__subtitle">
+      <div class="dialog__subtitle-content">
+        <div class="dialog__subtitle-text">Solicitud de Consulta</div>
+        <div class="dialog__subtitle-button"></div>
+      </div>
+      <div class="dialog__subtitle-line"></div>
+    </div>
+    <p class="dialog__text">
+      Esta seguro de solicitar los servicios de
+      <span class="dialog__bold">{{ aux }}</span> con la especialidad de
+      <span class="dialog__bold">Odontologia</span> con una puntuacion de
+      <span class="dialog__bold">5 estrellas</span>.
+    </p>
+    <p class="dialog__precio-costo">
+      Costo : <span class="dialog__precio-dinero">GRATIS</span>
+    </p>
+    <div class="dialog__subtitle">
+      <div class="dialog__subtitle-content">
+        <div class="dialog__subtitle-text">Restricciones</div>
+        <div class="dialog__subtitle-button"></div>
+      </div>
+      <div class="dialog__subtitle-line"></div>
+    </div>
+    <p class="dialog__text">
+      Debido a que se trata de una consulta GRATIS , usted no tendra ciertos
+      beneficios tales como :
+    </p>
+    <div class="dialog__list mb-5">
+      <ul>
+        <li>Creacion de prescripciones por parte del especialista</li>
+        <li>Creacion de un registro historico de su consulta</li>
+        <li>Tener garantia de respuesta inmediata</li>
+        <li>Obtener servicios extras de la aplicacion</li>
+      </ul>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-button
+      [mat-dialog-close]="true"
+      class="button__dialog--positive"
+      cdkFocusInitial
+    >
+      Pagar
+    </button>
+  </mat-dialog-actions>
+</div>

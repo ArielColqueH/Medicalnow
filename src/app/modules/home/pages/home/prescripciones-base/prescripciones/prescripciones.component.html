@@ -20,13 +20,13 @@
         {{ item.specialtyName }}
       </div>
       <div class="card-lista-prescripcion__fecha">
-        {{ item.prescriptionDate }}
+        {{ item.consultDate }}
       </div>
       <div class="card-lista-prescripcion__button">
         <button
           mat-raised-button
           class="button__normal-button"
-          (click)="irRecetas()"
+          (click)="irRecetas(item.consultId)"
         >
           Ver
         </button>

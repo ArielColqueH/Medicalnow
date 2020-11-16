@@ -44,10 +44,10 @@ export class ListaEspecialistasComponent implements OnInit {
     ]);
   }
 
-  solicitarConsulta() {
+  solicitarConsulta(doctorSpecialtyId: number) {
     const dialogRef = this.dialog.open(CobroConsultaComponent, {
       width: "600px",
-      // data: { id: this.id },
+      data: { doctorSpecialtyId: doctorSpecialtyId },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

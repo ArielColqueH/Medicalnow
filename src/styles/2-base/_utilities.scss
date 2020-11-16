@@ -14,6 +14,10 @@
   display: flex;
   justify-content: center;
 }
+.u__flex--space-between {
+  display: flex;
+  justify-content: space-between;
+}
 
 .ml-1 {
   margin-left: 1rem;

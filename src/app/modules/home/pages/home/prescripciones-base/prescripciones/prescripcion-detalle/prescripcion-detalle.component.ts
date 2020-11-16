@@ -1,9 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
+import { ActivatedRoute, Router } from "@angular/router";
+import { PrescriptionDetailListService } from "src/app/core/http/services/prescription-detail-list.service";
 import { PrescriptionListService } from "src/app/core/http/services/prescription-list.service";
 import { PrescriptionDetail } from "src/app/models/prescription-detail";
 import { PrescriptionItem } from "src/app/models/prescription-item";
 import { PrescriptionJson } from "src/app/models/prescription-json";
+import { PrescriptionModel } from "src/app/models/prescription-model";
+import { PrescriptionModelJSON } from "src/app/models/prescription-model-json";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 
 @Component({
@@ -12,52 +16,33 @@ import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-pr
   styleUrls: ["./prescripcion-detalle.component.scss"],
 })
 export class PrescripcionDetalleComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    private _router: Router,
+    private _route: ActivatedRoute,
+    public dialog: MatDialog,
+    private _service: PrescriptionDetailListService
+  ) {}
 
-  listaPrescription = new PrescriptionJson();
-  // listPrescriptionItem: PrescriptionItem[] = [
-  //   {
-  //     prescriptionId: 1,
-  //     diagnosis: "Lorem Ipsum",
-  //     doctorFirstName: "Richard",
-  //     doctorFirstSurname:"Lups",
-  //     prescriptionDate: "12/12/2020"
-  //   },
-  //   {
-  //     prescriptionId: 2,
-  //     diagnosis: "Lorem Ipsum",
-  //     doctorFirstName: "Maria",
-  //     doctorFirstSurname:"Delagado",
-  //     prescriptionDate: "11/12/2020"
-
-  //   },
-  // ];
-
-  prescripction: PrescriptionDetail[] = [
-    {
-      date: "2020/1/2",
-      prescriptionId: 1,
-    },
-    {
-      date: "2020/1/3",
-      prescriptionId: 2,
-    },
-  ];
-  //prescripction: PrescriptionDetail[];
+  listaPrescriptionDetail = new PrescriptionModelJSON();
 
   ngOnInit() {
-    //this.ObtenerDatos();
+    this.ObtenerDatos();
   }
 
-  openDialog(id: number) {
-    console.log(id);
+  openDialog(prescriptionid: number) {
     const dialogRef = this.dialog.open(DetallePrescripcionComponent, {
       width: "600px",
-      // data: { id: this.id },
+      data: { prescriptionId: prescriptionid },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  ObtenerDatos() {
+    this._service
+      .listPrescriptionDetail(this._route.snapshot.paramMap.get("id"))
+      .subscribe((data) => (this.listaPrescriptionDetail = data));
+    //this.aux = this.listaEspecialidades;
   }
 }

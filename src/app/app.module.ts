@@ -32,7 +32,8 @@ import { AuthGuard } from "./core/auth/guards/auth.guard";
 import { RandomGuard } from "./core/auth/guards/random.guard";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./core/auth/token.service";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { RatingModule } from "ng-starrating";
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,6 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DialogsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    RatingModule,
   ],
   providers: [
     StyleUtils,

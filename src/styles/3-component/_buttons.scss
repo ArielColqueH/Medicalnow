@@ -54,6 +54,15 @@
   &--primary {
     background-color: $color-primary-blue !important;
   }
+  &__chat {
+    margin-left: 1rem !important;
+  }
+  &--secondary {
+    background-color: $color-primary-gray !important;
+  }
+  &--delete {
+    background-color: $color-primary-red !important;
+  }
 }
 .button__dialog--positive {
   background-color: $color-primary-blue !important;
