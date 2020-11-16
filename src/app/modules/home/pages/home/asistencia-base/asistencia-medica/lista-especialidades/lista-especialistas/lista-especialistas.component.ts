@@ -17,8 +17,10 @@ import { CobroConsultaComponent } from "src/app/modules/dialogs/cobro-consulta/c
 })
 export class ListaEspecialistasComponent implements OnInit {
   listaEspecialista = new DoctorSpecialtyJson();
-  id: string = "";
 
+
+  id: string = "";
+  
   constructor(
     private _service: SpecialtieslistService,
     private _route: ActivatedRoute,
@@ -52,4 +54,15 @@ export class ListaEspecialistasComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  fixhoursini(hora:string){
+    var splitted = hora.split(":",3);
+    console.log(splitted);
+    console.log(  "sndjnsc"); 
+    var horaModi = splitted[0]+":"+splitted[1];
+    return horaModi;
+  }
+
+  
+
 }

@@ -1,5 +1,5 @@
 export class Prescription {
-  prescriptionIdr: number;
+  prescriptionId: number;
   prescriptionName: string;
   prescriptionDetail: string;
   prescriptionQuantity: number;

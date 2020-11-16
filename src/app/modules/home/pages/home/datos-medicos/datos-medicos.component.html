@@ -12,7 +12,7 @@
         <div class="card-datos-medicos__subtitulo-compuesto">
           <div class="card-datos-medicos__subtitulo-button">Datos</div>
         </div>
-        <form>
+        <form (ngSubmit)="registerDatosMedicos()"> 
           <div class="card-datos-medicos__informacion">
             <div class="card-datos-medicos__informacion--subtitulo">Peso :</div>
             <div class="card-datos-medicos__informacion--titulo">
@@ -23,6 +23,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 85"
+                  [(ngModel)]="datos.weight"
                   name="peso"
                 />
               </mat-form-field>
@@ -41,6 +42,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 180"
+                  [(ngModel)]="datos.height"
                   name="altura"
                 />
               </mat-form-field>
@@ -59,6 +61,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 40"
+                  [(ngModel)]="datos.temperature"
                   name="gradosC"
                 />
               </mat-form-field>
@@ -77,6 +80,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 40"
+                  [(ngModel)]="datos.pressure"
                   name="presion"
                 />
               </mat-form-field>
@@ -93,8 +97,9 @@
                 class="modal-container__inputs--width"
               >
                 <mat-label>Grupo Sanguineo</mat-label>
-                <mat-select [(ngModel)]="selectedValueCombobox" name="sangre">
+                <mat-select  [(ngModel)]="datos.bloodGroup" name="bloodGroup">
                   <mat-option
+                   
                     *ngFor="let item of grupoSanguineo"
                     [value]="item"
                   >

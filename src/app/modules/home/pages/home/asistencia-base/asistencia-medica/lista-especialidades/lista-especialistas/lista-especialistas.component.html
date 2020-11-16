@@ -33,9 +33,9 @@
           {{ item.firstName }} {{ item.firstSurname }}
           {{ item.secondSurname }}
         </div>
-        <div class="card-lista-especialista__consulta-precio">100 Bs</div>
+        <div class="card-lista-especialista__consulta-precio">{{item.price}}</div>
         <div class="card-lista-especialista__horario-atencion">
-          12:30 - 15:00
+           {{ fixhoursini(item.fromTime) }} {{fixhoursini(item.toTime)}}
         </div>
 
         <div class="card-lista-especialista__puntuacion">

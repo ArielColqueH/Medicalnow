@@ -4,5 +4,8 @@ export class DoctorSpecialtyModel {
   firstName: string;
   firstSurname: string;
   secondSurname: string;
+  price:number;
+  fromTime:string;
+  toTime:string;
   qualification: string;
 }
