@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { map } from "rxjs/internal/operators/map";
 import { config } from "src/app/models/auth/config";
 import { PatientMessageModel } from "src/app/models/PatientMessageModel";
 

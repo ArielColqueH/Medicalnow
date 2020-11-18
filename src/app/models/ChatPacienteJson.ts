@@ -4,5 +4,5 @@ import { DoctorSpecialtyNameModel } from "./DoctorSpecialtyNameModel";
 
 export class ChatPacienteJson {
   doctorInfo: DoctorNameModel = new DoctorNameModel();
-  content: ConversationModel[];
+  content: ConversationModel[] = [];
 }
