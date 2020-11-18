@@ -7,13 +7,13 @@ import { config } from "src/app/models/auth/config";
 })
 export class ChatPacienteService {
   constructor(private _http: HttpClient) {}
-  listChat(chatId: string) {
+  listChat(consultId: string) {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/chat/patient/` + chatId + `/messages`,
+      `${config.apiUrl}/chat/patient/` + consultId + `/messages`,
       {
         headers: reqHeader,
       }

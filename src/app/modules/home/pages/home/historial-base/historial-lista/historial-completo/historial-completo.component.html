@@ -53,4 +53,34 @@
       </div>
     </div>
   </div>
+  <div class="" fxLayout="row">
+    <div class="px-1" fxFlex="50">
+      <div class="card-historial-completo__titulo">* Prescripciones</div>
+      <div class="card-historial-completo__container">
+        <div class="u__flex--center">
+          <button
+            mat-raised-button
+            class="button__large-button--primary"
+            (click)="abrirPrescripcion(4)"
+          >
+            Prescripcion # x
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="px-1" fxFlex="50">
+      <div class="card-historial-completo__titulo">* Chat</div>
+      <div class="card-historial-completo__container">
+        <div class="u__flex--center">
+          <button
+            mat-raised-button
+            class="button__large-button--primary"
+            (click)="abrirMiniChat()"
+          >
+            Ver todo el chat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

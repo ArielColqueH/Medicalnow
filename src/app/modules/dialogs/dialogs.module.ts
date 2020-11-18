@@ -10,6 +10,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { ConsultaGratisComponent } from "./consulta-gratis/consulta-gratis.component";
 import { DarPuntuacionComponent } from "./dar-puntuacion/dar-puntuacion.component";
 import { RatingModule } from "ng-starrating";
+import { MiniChatComponent } from "./mini-chat/mini-chat.component";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { RatingModule } from "ng-starrating";
     CobroConsultaComponent,
     ConsultaGratisComponent,
     DarPuntuacionComponent,
+    MiniChatComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { RatingModule } from "ng-starrating";
     CobroConsultaComponent,
     ConsultaGratisComponent,
     DarPuntuacionComponent,
+    MiniChatComponent,
   ],
 })
 export class DialogsModule {}

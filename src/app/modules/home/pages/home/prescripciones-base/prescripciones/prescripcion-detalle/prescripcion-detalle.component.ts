@@ -30,7 +30,7 @@ export class PrescripcionDetalleComponent implements OnInit {
 
   openDialog(prescriptionid: number) {
     const dialogRef = this.dialog.open(DetallePrescripcionComponent, {
-      width: "600px",
+      width: "1000px",
       data: { prescriptionId: prescriptionid },
     });
 

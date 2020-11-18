@@ -1,0 +1,42 @@
+<div class="dialog__container">
+  <mat-dialog-content>
+    <div class="dialog__subtitle">
+      <div class="dialog__subtitle-content">
+        <div class="dialog__subtitle-text">Chat</div>
+        <div class="dialog__subtitle-button"></div>
+      </div>
+      <div class="dialog__subtitle-line"></div>
+    </div>
+    <div *ngFor="let item of chat.content; let i = index">
+      <ng-container *ngIf="item.roleId == 2; else elseTemplate">
+        <div class="card-historial-completo__chat--paciente">
+          <div class="card-historial-completo__chat">
+            <div class="card-historial-completo__usuario">Paciente</div>
+            <span class="card-historial-completo__informacion--subtitulo">
+              Mensaje :
+            </span>
+            <div class="card-historial-completo__informacion--diagnostico">
+              {{ item.message }}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="card-historial-completo__chat--doctor">
+          <div class="card-historial-completo__chat">
+            <div class="card-historial-completo__usuario">Doctor</div>
+            <span class="card-historial-completo__informacion--subtitulo">
+              Mensaje :
+            </span>
+            <div class="card-historial-completo__informacion--diagnostico">
+              {{ item.message }}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</div>
