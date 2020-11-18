@@ -2,6 +2,8 @@ import { HostListener } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
+import { HistorialmedicolistaService } from "src/app/core/http/services/historialmedicolista.service";
+import { MedicalHistoryListModel } from "src/app/models/medical-history-list-model";
 import { DarPuntuacionComponent } from "src/app/modules/dialogs/dar-puntuacion/dar-puntuacion.component";
 
 @Component({
@@ -13,12 +15,18 @@ export class HistorialListaComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _service: HistorialmedicolistaService
   ) {}
+  medicalHistorymodel: MedicalHistoryListModel[] = [];
 
-  ngOnInit() {}
-  irHistorialGeneral() {
-    this._router.navigate(["historial-completo"], { relativeTo: this._route });
+  ngOnInit() {
+    this.ObtenerDatos();
+  }
+  irHistorialGeneral(medicalHistoryId: number) {
+    this._router.navigate(["historial-completo/" + medicalHistoryId], {
+      relativeTo: this._route,
+    });
   }
 
   darPuntuacion() {
@@ -28,5 +36,11 @@ export class HistorialListaComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  ObtenerDatos() {
+    this._service
+      .getListMedicalHistory()
+      .subscribe((data) => (this.medicalHistorymodel = data));
   }
 }

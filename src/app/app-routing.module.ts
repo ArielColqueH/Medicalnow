@@ -103,7 +103,7 @@ const routes: Routes = [
             component: HistorialListaComponent,
           },
           {
-            path: "historial-completo",
+            path: "historial-completo/:id",
             children: [
               {
                 path: "",
