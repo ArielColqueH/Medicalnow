@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormControl, Validators } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material/core";
-import { User } from "src/app/models/user";
+import { UserDataModel } from "src/app/models/user";
 import { RegistroService } from "src/app/core/http/services/registro.service";
 
 @Component({
@@ -13,14 +13,13 @@ import { RegistroService } from "src/app/core/http/services/registro.service";
 export class RegistroComponent implements OnInit {
   mylogo: string = "assets/images/Logo.png";
 
-  user = new User();
+  user = new UserDataModel();
 
   constructor(
     private _service: RegistroService,
     private _router: Router,
     private route: ActivatedRoute
-
-    ) {}
+  ) {}
   ngOnInit() {}
   registerUser() {
     this._service.conexionBackend(this.user).subscribe(

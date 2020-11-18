@@ -5,7 +5,7 @@ import { catchError, mapTo, tap } from "rxjs/operators";
 
 import { Tokens } from "src/app/models/auth/tokens";
 import { config } from "src/app/models/auth/config";
-import { User } from "src/app/models/user";
+import { UserDataModel } from "src/app/models/user";
 import { Router } from "@angular/router";
 
 @Injectable({
@@ -20,7 +20,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(user: User): Observable<any> {
+  login(user: UserDataModel): Observable<any> {
     return this.http.post<any>(`${config.apiUrl}/security/login`, user).pipe(
       tap((tokens) => this.doLoginUser(user.email, tokens)),
       mapTo(true),
@@ -115,9 +115,9 @@ export class AuthService {
     localStorage.removeItem(this.USERID);
   }
 
-  tokenExpired() {
-    this.tokenJWT = this.getJwtToken();
-    const expiry = JSON.parse(atob(this.tokenJWT.split(".")[1])).exp;
-    return Math.floor(new Date().getTime() / 1000) >= expiry;
-  }
+  // tokenExpired() {
+  //   this.tokenJWT = this.getJwtToken();
+  //   const expiry = JSON.parse(atob(this.tokenJWT.split(".")[1])).exp;
+  //   return Math.floor(new Date().getTime() / 1000) >= expiry;
+  // }
 }

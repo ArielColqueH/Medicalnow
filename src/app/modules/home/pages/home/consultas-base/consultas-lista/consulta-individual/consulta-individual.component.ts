@@ -5,7 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ChatMensajeService } from "src/app/core/http/services/chat-mensaje.service";
 import { ChatPacienteService } from "src/app/core/http/services/chat-paciente.service";
 import { ChatPacienteJson } from "src/app/models/ChatPacienteJson";
-import { PatientMessageModel } from "src/app/models/PatientMessageModel";
+import { MessageModel } from "src/app/models/MessageModel";
 
 @Component({
   selector: "app-consulta-individual",
@@ -23,7 +23,7 @@ export class ConsultaIndividualComponent implements OnInit {
   mensaje: string = "";
 
   chat = new ChatPacienteJson();
-  mensajeChat = new PatientMessageModel();
+  mensajeChat = new MessageModel();
   constructor(
     public dialog: MatDialog,
     private _service: ChatPacienteService,
@@ -65,13 +65,12 @@ export class ConsultaIndividualComponent implements OnInit {
     // // });
 
     this.mensajeChat = {
-      doctorSpecialtyId: doctorSpecialtyId,
+      consultId: this._route.snapshot.paramMap.get("id"),
       message: this.mensaje,
     };
     this._serviceMessage
       .sendMenssage(this.mensajeChat)
       .subscribe((data: any) => console.log(data));
-
     this.mensaje = "";
     window.location.reload();
   }

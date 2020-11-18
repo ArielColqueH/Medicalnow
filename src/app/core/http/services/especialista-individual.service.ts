@@ -14,7 +14,7 @@ export class EspecialistaIndividualService {
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/consults/` + doctorSpecialtyId + `/payment/info`,
+      `${config.apiUrl}/consult/` + doctorSpecialtyId + `/payment/info`,
       {
         headers: reqHeader,
       }

@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "src/app/core/auth/auth.service";
-import { User } from "src/app/models/user";
+import { UserDataModel } from "src/app/models/user";
 
 @Component({
   selector: "app-login",
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   correo: string;
   loginForm: FormGroup;
 
-  user = new User();
+  user = new UserDataModel();
   msg = "";
   id: string = "";
 
@@ -48,10 +48,5 @@ export class LoginComponent implements OnInit {
         this.msg = "Enter valid  email and password";
       }
     );
-  }
-
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
   }
 }

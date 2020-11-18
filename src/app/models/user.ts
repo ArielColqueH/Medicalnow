@@ -1,4 +1,4 @@
-export class User {
+export class UserDataModel {
   firstName: string;
   firstSurname: string;
   secondSurname: string;
@@ -7,5 +7,4 @@ export class User {
   password: string;
   phoneNumber: string;
   constructor() {}
-
 }

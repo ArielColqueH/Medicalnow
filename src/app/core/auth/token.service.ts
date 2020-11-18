@@ -39,11 +39,11 @@ export class TokenInterceptor implements HttpInterceptor {
       catchError((error) => {
         if (error instanceof HttpErrorResponse) {
           console.log("entro aqui");
-          if (this.authService.tokenExpired()) {
-            // token expired
-            this.authService.doLogoutUser();
-            this._router.navigate(["/login"]);
-          }
+          // if (this.authService.tokenExpired()) {
+          //   // token expired
+          //   this.authService.doLogoutUser();
+          //   this._router.navigate(["/login"]);
+          // }
           return this.handle401Error(request, next);
         } else {
           console.log("token expirado");

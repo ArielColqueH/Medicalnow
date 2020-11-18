@@ -14,7 +14,7 @@ export class ConsultasService {
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/consults/patient/` + consultaId,
+      `${config.apiUrl}/consult/patient/` + consultaId,
       {
         headers: reqHeader,
       }

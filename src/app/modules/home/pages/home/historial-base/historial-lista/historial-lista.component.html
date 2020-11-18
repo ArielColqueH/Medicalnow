@@ -26,13 +26,24 @@
         {{ item.status == 1 ? "Activo" : "Inactivo" }}
       </div>
       <div class="card-lista-historial__button">
-        <button
-          mat-raised-button
-          class="button__normal-button"
-          (click)="irHistorialGeneral(item.medicalHistoryId)"
-        >
-          Ver detalle
-        </button>
+        <ng-container *ngIf="item.status == 1; else elseTemplate">
+          <button
+            mat-raised-button
+            class="button__normal-button"
+            (click)="irHistorialGeneral(item.medicalHistoryId)"
+          >
+            Ver detalle
+          </button>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <button
+            mat-raised-button
+            class="button__normal-button"
+            (click)="darPuntuacion()"
+          >
+            Ver detalle
+          </button>
+        </ng-template>
       </div>
     </div>
   </div>
