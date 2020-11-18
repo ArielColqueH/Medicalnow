@@ -1,7 +1,7 @@
-import { PrescriptionDetail } from './prescription-detail';
+import { PrescriptionDateListModel } from "./prescriptiondatelistmodel";
 
-describe('PrescriptionDetail', () => {
-  it('should create an instance', () => {
-    expect(new PrescriptionDetail()).toBeTruthy();
+describe("PrescriptionDetail", () => {
+  it("should create an instance", () => {
+    expect(new PrescriptionDateListModel()).toBeTruthy();
   });
 });

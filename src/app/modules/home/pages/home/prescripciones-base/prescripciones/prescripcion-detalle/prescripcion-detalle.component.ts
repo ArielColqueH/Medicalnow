@@ -3,8 +3,7 @@ import { MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PrescriptionDetailListService } from "src/app/core/http/services/prescription-detail-list.service";
 import { PrescriptionListService } from "src/app/core/http/services/prescription-list.service";
-import { PrescriptionDetail } from "src/app/models/prescription-detail";
-import { PrescriptionItem } from "src/app/models/prescription-item";
+
 import { PrescriptionJson } from "src/app/models/prescription-json";
 import { PrescriptionModel } from "src/app/models/prescription-model";
 import { PrescriptionModelJSON } from "src/app/models/prescription-model-json";

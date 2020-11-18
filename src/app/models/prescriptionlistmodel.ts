@@ -1,4 +1,4 @@
-export class PrescriptionItem {
+export class PrescriptionListModel {
   consultId: number;
   firstName: string;
   firstSurname: string;

@@ -1,4 +1,4 @@
-export class PrescriptionDetail {
+export class PrescriptionDateListModel {
   date: string;
   prescriptionId: number;
 }

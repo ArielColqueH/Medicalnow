@@ -2,9 +2,12 @@
   <div class="chat-container">
     <mat-form-field class="input-width">
       <mat-label>Mensaje</mat-label>
-      <textarea matInput placeholder="Escriba aqui" [(ngModel)]="mensaje">{{
-        nombreArchivo
-      }}</textarea>
+      <textarea
+        matInput
+        placeholder="Escriba aqui"
+        [(ngModel)]="mensaje"
+      ></textarea>
+      {{ imageName }}
     </mat-form-field>
     <input
       #csvInput
@@ -12,7 +15,7 @@
       type="file"
       onclick="this.value=null"
       accept=".png,.jpg"
-      (change)="handleFileInput($event.target.files)"
+      (change)="onFileChanged($event)"
     />
     <button (click)="csvInput.click()" mat-fab class="circle-button--primary">
       <mat-icon>attachment</mat-icon>

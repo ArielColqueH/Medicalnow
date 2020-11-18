@@ -7,17 +7,8 @@
       </div>
       <div class="dialog__subtitle-line"></div>
     </div>
-    <form class="dialog__form">
-      <mat-form-field class="dialog__form--width">
-        <mat-label>Detalle</mat-label>
-        <textarea
-          matInput
-          placeholder="Usted debe colocarse la pomada 3 veces al dia"
-          [(ngModel)]="descriptionDetail.description"
-          name="prescriptionDetail"
-        ></textarea>
-      </mat-form-field>
-    </form>
+    <div class="dialog__descripcion mt-3">Descripcion</div>
+    <div class="">{{ descriptionDetail.description }}</div>
     <div
       class=""
       *ngIf="this.descriptionDetail.prescription_detail.length !== 0"

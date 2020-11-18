@@ -1,6 +1,6 @@
-import { PrescriptionItem } from './prescription-item';
+import { PrescriptionListModel } from "./prescriptionlistmodel";
 
 export class PrescriptionJson {
   specialtyName: string;
-  body: PrescriptionItem[];
+  body: PrescriptionListModel[];
 }

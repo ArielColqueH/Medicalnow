@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PrescriptionListService } from "src/app/core/http/services/prescription-list.service";
-import { PrescriptionItem } from "src/app/models/prescription-item";
+import { PrescriptionListModel } from "src/app/models/prescriptionlistmodel";
 
 @Component({
   selector: "app-prescripciones",
@@ -29,7 +29,7 @@ export class PrescripcionesComponent implements OnInit {
   //     prescriptionDate: "2020/1/20",
   //   },
   // ];
-  listPrescriptionItem: PrescriptionItem[];
+  listPrescriptionItem: PrescriptionListModel[];
   constructor(
     private _router: Router,
     private route: ActivatedRoute,
