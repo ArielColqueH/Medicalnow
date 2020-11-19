@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ConsultasService } from "src/app/core/http/services/consultas.service";
 import { Consults } from "src/app/models/Consults";
 import { CobroConsultaComponent } from "src/app/modules/dialogs/cobro-consulta/cobro-consulta.component";
+import { DarPuntuacionComponent } from "src/app/modules/dialogs/dar-puntuacion/dar-puntuacion.component";
 
 @Component({
   selector: "app-consultas-lista",
@@ -33,5 +34,27 @@ export class ConsultasListaComponent implements OnInit {
     this._service
       .listConsults(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.consultas = data));
+  }
+
+  darPuntuacion() {
+    const dialogRef = this.dialog.open(DarPuntuacionComponent, {
+      width: "600px",
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  verificarEstado(estado: number) {
+    switch (estado) {
+      case 1:
+        return "Activo";
+        break;
+      case 2:
+        return "Calificar";
+        break;
+      case 3:
+        return "Concluido";
+        break;
+    }
   }
 }

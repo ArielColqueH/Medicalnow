@@ -9,6 +9,7 @@
     <div class="card-lista-consultas__nombre-doctor">Doctor</div>
     <div class="card-lista-consultas__especialidad">Especialidad</div>
     <div class="card-lista-consultas__fecha">Fecha de Inicio</div>
+    <div class="card-lista-consultas__estado">Fecha de Inicio</div>
     <div class="card-lista-consultas__button">Accion</div>
   </div>
   <div *ngFor="let item of consultas; let i = index">
@@ -20,6 +21,9 @@
         {{ item.specialtyName }}
       </div>
       <div class="card-lista-consultas__fecha">{{ item.startDate }}</div>
+      <div class="card-lista-consultas__estado">
+        {{ verificarEstado(item.status) }}
+      </div>
       <div class="card-lista-consultas__button">
         <button
           mat-raised-button

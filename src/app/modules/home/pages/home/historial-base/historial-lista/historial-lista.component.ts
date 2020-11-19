@@ -23,18 +23,9 @@ export class HistorialListaComponent implements OnInit {
   ngOnInit() {
     this.ObtenerDatos();
   }
-  irHistorialGeneral(medicalHistoryId: number) {
-    this._router.navigate(["historial-completo/" + medicalHistoryId], {
+  irHistorialHojas(medicalHistoryId: number) {
+    this._router.navigate(["historial-hoja/" + medicalHistoryId], {
       relativeTo: this._route,
-    });
-  }
-
-  darPuntuacion() {
-    const dialogRef = this.dialog.open(DarPuntuacionComponent, {
-      width: "600px",
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
     });
   }
 

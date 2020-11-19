@@ -1,0 +1,30 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">
+        Historial Medico | Especialidad : Odontologia | Mariana Cardozo Costa
+      </div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="card-lista-hoja-vida card-lista-hoja-vida--header">
+    <div class="card-lista-hoja-vida__fecha">Fecha</div>
+    <div class="card-lista-hoja-vida__estado">Estado</div>
+    <div class="card-lista-hoja-vida__button">Acciones</div>
+  </div>
+  <!-- <div *ngFor="let item of listaPrescriptionDetail.content; let i = index"> -->
+  <div class="card-lista-hoja-vida card-lista-hoja-vida--row">
+    <div class="card-lista-hoja-vida__fecha">2020/08/08</div>
+    <div class="card-lista-hoja-vida__estado">Activo</div>
+    <div class="card-lista-hoja-vida__button">
+      <button
+        mat-raised-button
+        class="button__normal-button"
+        (click)="irHistorialCompleto(1)"
+      >
+        Ver
+      </button>
+    </div>
+  </div>
+  <!-- </div> -->
+</div>

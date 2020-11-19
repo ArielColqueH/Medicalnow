@@ -34,7 +34,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatDialogModule } from "@angular/material/dialog";
 import { HistorialBaseComponent } from "./pages/home/historial-base/historial-base.component";
 import { HistorialListaComponent } from "./pages/home/historial-base/historial-lista/historial-lista.component";
-import { HistorialCompletoComponent } from "./pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
 import { ConsultasBaseComponent } from "./pages/home/consultas-base/consultas-base.component";
 import { ConsultasListaComponent } from "./pages/home/consultas-base/consultas-lista/consultas-lista.component";
 import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consultas-lista/consulta-individual/consulta-individual.component";
@@ -44,6 +43,8 @@ import { PrescripcionDetalleComponent } from "./pages/home/prescripciones-base/p
 import { DatosMedicosComponent } from "./pages/home/datos-medicos/datos-medicos.component";
 import { ListaEspecialidadesGratuitasComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades-gratuitas/lista-especialidades-gratuitas.component";
 import { ListaEspecialistasGratisComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades-gratuitas/lista-especialistas-gratis/lista-especialistas-gratis.component";
+import { HistorialHojasComponent } from "./pages/home/historial-base/historial-lista/historial-hojas/historial-hojas.component";
+import { HistorialCompletoComponent } from "./pages/home/historial-base/historial-lista/historial-hojas/historial-completo/historial-completo.component";
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ListaEspecialistasGratisComponent } from "./pages/home/asistencia-base/
     DatosMedicosComponent,
     ListaEspecialidadesGratuitasComponent,
     ListaEspecialistasGratisComponent,
+    HistorialHojasComponent,
   ],
   imports: [
     CommonModule,

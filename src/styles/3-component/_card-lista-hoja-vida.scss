@@ -1,4 +1,4 @@
-.card-lista-consultas {
+.card-lista-hoja-vida {
   &--row {
     background-color: $color-primary-white;
     display: flex;
@@ -23,38 +23,19 @@
     font-weight: bold;
   }
 
-  &__nombre-doctor {
+  &__button {
     //background-color: orange;
-    flex: 0 1 15%;
-    text-align: center;
-  }
-
-  &__nombre-especialista {
-    //background-color: palegoldenrod;
-    flex: 0 1 15%;
-    text-align: center;
-  }
-
-  &__especialidad {
-    //background-color: palegoldenrod;
-    flex: 0 1 15%;
+    flex: 0 1 30%;
     text-align: center;
   }
   &__estado {
     //background-color: palegoldenrod;
-    flex: 0 1 15%;
+    flex: 0 1 35%;
     text-align: center;
   }
-
   &__fecha {
     //background-color: plum;
-    flex: 0 1 15%;
-    text-align: center;
-  }
-
-  &__button {
-    //background-color: plum;
-    flex: 0 1 25%;
+    flex: 0 1 35%;
     text-align: center;
   }
 }

@@ -5,4 +5,5 @@ export class Consults {
   secondSurname: string;
   specialtyName: string;
   startDate: string;
+  status: number;
 }
