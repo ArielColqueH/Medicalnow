@@ -36,7 +36,7 @@ export class ConsultasListaComponent implements OnInit {
       .subscribe((data) => (this.consultas = data));
   }
 
-  darPuntuacion() {
+  darPuntuacion(consultaId: number) {
     const dialogRef = this.dialog.open(DarPuntuacionComponent, {
       width: "600px",
     });
@@ -52,7 +52,7 @@ export class ConsultasListaComponent implements OnInit {
       case 2:
         return "Calificar";
         break;
-      case 3:
+      case 0:
         return "Concluido";
         break;
     }

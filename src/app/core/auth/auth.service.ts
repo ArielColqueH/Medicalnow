@@ -115,9 +115,9 @@ export class AuthService {
     localStorage.removeItem(this.USERID);
   }
 
-  // tokenExpired() {
-  //   this.tokenJWT = this.getJwtToken();
-  //   const expiry = JSON.parse(atob(this.tokenJWT.split(".")[1])).exp;
-  //   return Math.floor(new Date().getTime() / 1000) >= expiry;
-  // }
+  tokenExpired() {
+    this.tokenJWT = this.getJwtToken();
+    const expiry = JSON.parse(atob(this.tokenJWT.split(".")[1])).exp;
+    return Math.floor(new Date().getTime() / 1000) >= expiry;
+  }
 }

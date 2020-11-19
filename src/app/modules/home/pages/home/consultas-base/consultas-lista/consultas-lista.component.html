@@ -25,13 +25,24 @@
         {{ verificarEstado(item.status) }}
       </div>
       <div class="card-lista-consultas__button">
-        <button
-          mat-raised-button
-          class="button__normal-button"
-          (click)="irAChat(item.consultId)"
-        >
-          Solicitar
-        </button>
+        <div *ngIf="item.status == 1">
+          <button
+            mat-raised-button
+            class="button__normal-button"
+            (click)="irAChat(item.consultId)"
+          >
+            Ver Chat
+          </button>
+        </div>
+        <div *ngIf="item.status == 2">
+          <button
+            mat-raised-button
+            class="button__normal-button"
+            (click)="darPuntuacion(item.consultId)"
+          >
+            Dar Puntuacion
+          </button>
+        </div>
       </div>
     </div>
   </div>

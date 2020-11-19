@@ -9,7 +9,6 @@
     <div class="card-lista-historial__nombre-doctor">Doctor</div>
     <div class="card-lista-historial__especialidad">Especialidad</div>
     <div class="card-lista-historial__fecha">Fecha de Inicio</div>
-    <div class="card-lista-historial__estado">Estado</div>
     <div class="card-lista-historial__button">Accion</div>
   </div>
 
@@ -22,28 +21,15 @@
         {{ item.specialtyName }}
       </div>
       <div class="card-lista-historial__fecha">{{ item.startDate }}</div>
-      <div class="card-lista-historial__estado">
-        {{ item.status == 1 ? "Activo" : "Inactivo" }}
-      </div>
+
       <div class="card-lista-historial__button">
-        <ng-container *ngIf="item.status == 1; else elseTemplate">
-          <button
-            mat-raised-button
-            class="button__normal-button"
-            (click)="irHistorialHojas(item.medicalHistoryId)"
-          >
-            Ver detalle
-          </button>
-        </ng-container>
-        <ng-template #elseTemplate>
-          <button
-            mat-raised-button
-            class="button__normal-button"
-            (click)="darPuntuacion()"
-          >
-            Ver detalle
-          </button>
-        </ng-template>
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="irHistorialHojas(item.medicalHistoryId)"
+        >
+          Ver detalle
+        </button>
       </div>
     </div>
   </div>

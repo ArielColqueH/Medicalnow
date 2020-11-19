@@ -1,7 +1,7 @@
 import { HostListener } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { HistorialmedicoService } from "src/app/core/http/services/historialmedico.service";
 import { HistorialMedico } from "src/app/models/historial-medico";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
@@ -16,8 +16,9 @@ export class HistorialCompletoComponent implements OnInit {
   historialMedico = new HistorialMedico();
   constructor(
     private _service: HistorialmedicoService,
-    private _router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _route: ActivatedRoute,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class HistorialCompletoComponent implements OnInit {
 
   ObtenerDatos() {
     this._service
-      .getHistorial()
+      .getHistorial(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.historialMedico = data));
   }
   abrirPrescripcion(prescriptionid: number) {

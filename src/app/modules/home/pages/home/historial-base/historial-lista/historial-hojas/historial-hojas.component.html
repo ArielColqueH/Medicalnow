@@ -2,7 +2,11 @@
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
       <div class="title__text">
-        Historial Medico | Especialidad : Odontologia | Mariana Cardozo Costa
+        Historial Medico | Especialidad :
+        {{ medicalHitoryHoja.doctorInfo.specialtyName }}
+        | {{ medicalHitoryHoja.doctorInfo.firstName }}
+        {{ medicalHitoryHoja.doctorInfo.firstSurname }}
+        {{ medicalHitoryHoja.doctorInfo.secondSurname }}
       </div>
       <div class="title__row"></div>
     </div>
@@ -12,19 +16,21 @@
     <div class="card-lista-hoja-vida__estado">Estado</div>
     <div class="card-lista-hoja-vida__button">Acciones</div>
   </div>
-  <!-- <div *ngFor="let item of listaPrescriptionDetail.content; let i = index"> -->
-  <div class="card-lista-hoja-vida card-lista-hoja-vida--row">
-    <div class="card-lista-hoja-vida__fecha">2020/08/08</div>
-    <div class="card-lista-hoja-vida__estado">Activo</div>
-    <div class="card-lista-hoja-vida__button">
-      <button
-        mat-raised-button
-        class="button__normal-button"
-        (click)="irHistorialCompleto(1)"
-      >
-        Ver
-      </button>
+  <div *ngFor="let item of medicalHitoryHoja.content; let i = index">
+    <div class="card-lista-hoja-vida card-lista-hoja-vida--row">
+      <div class="card-lista-hoja-vida__fecha">{{ item.startDate }}</div>
+      <div class="card-lista-hoja-vida__estado">
+        {{ item.status == 1 ? "Activo" : "Inactivo" }}
+      </div>
+      <div class="card-lista-hoja-vida__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="irHistorialCompleto(item.consultId)"
+        >
+          Ver
+        </button>
+      </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>

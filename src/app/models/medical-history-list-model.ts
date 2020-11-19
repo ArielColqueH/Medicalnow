@@ -5,5 +5,4 @@ export class MedicalHistoryListModel {
   secondSurname: string;
   specialtyName: string;
   startDate: string;
-  status: number;
 }

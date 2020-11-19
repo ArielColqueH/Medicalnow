@@ -5,18 +5,16 @@ import { config } from "src/app/models/auth/config";
 @Injectable({
   providedIn: "root",
 })
-export class HistorialmedicoService {
+export class DatosGeneralesPacienteService {
   constructor(private _http: HttpClient) {}
 
-  getHistorial(consulId: string) {
-    //http://localhost:8008/api/v1/laboratory/1
+  getDatosGenerales() {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/medical_history/` + consulId + `/detail`,
-
+      `${config.apiUrl}/user/medical_data/` + localStorage.getItem("userId"),
       {
         headers: reqHeader,
       }

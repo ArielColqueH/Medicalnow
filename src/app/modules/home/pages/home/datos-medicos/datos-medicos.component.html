@@ -23,7 +23,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 85"
-                  [(ngModel)]="datos.weight"
+                  [(ngModel)]="medicalDataModel.weight"
                   name="peso"
                 />
               </mat-form-field>
@@ -42,7 +42,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 180"
-                  [(ngModel)]="datos.height"
+                  [(ngModel)]="medicalDataModel.height"
                   name="altura"
                 />
               </mat-form-field>
@@ -61,7 +61,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 40"
-                  [(ngModel)]="datos.temperature"
+                  [(ngModel)]="medicalDataModel.temperature"
                   name="gradosC"
                 />
               </mat-form-field>
@@ -80,7 +80,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 40"
-                  [(ngModel)]="datos.pressure"
+                  [(ngModel)]="medicalDataModel.pressure"
                   name="presion"
                 />
               </mat-form-field>
@@ -97,7 +97,10 @@
                 class="modal-container__inputs--width"
               >
                 <mat-label>Grupo Sanguineo</mat-label>
-                <mat-select [(ngModel)]="datos.bloodGroup" name="bloodGroup">
+                <mat-select
+                  [(ngModel)]="medicalDataModel.bloodGroup"
+                  name="bloodGroup"
+                >
                   <mat-option
                     *ngFor="let item of grupoSanguineo"
                     [value]="item"
