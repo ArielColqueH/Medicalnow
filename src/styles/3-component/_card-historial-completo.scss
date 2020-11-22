@@ -28,6 +28,18 @@
       color: $color-primary-blue;
       font-weight: bold;
     }
+    &--image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: green;
+    }
+  }
+  &__image {
+    background-color: orange;
+    width: 50%;
+    height: auto;
   }
 
   &__chat {

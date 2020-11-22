@@ -68,4 +68,17 @@
       </ng-template>
     </div>
   </div>
+  <div *ngIf="retrievedImage">
+    <div class="card-historial-completo__chat--paciente">
+      <div class="card-historial-completo__chat">
+        <div class="card-historial-completo__usuario">Paciente</div>
+        <span class="card-historial-completo__informacion--subtitulo">
+          Mensaje :
+        </span>
+        <div class="card-historial-completo__informacion--image">
+          <img [src]="retrievedImage" class="card-historial-completo__image" />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
