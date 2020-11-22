@@ -43,7 +43,7 @@ export class HistorialCompletoComponent implements OnInit {
   abrirMiniChat(consultId: number) {
     const dialogRef = this.dialog.open(MiniChatComponent, {
       width: "600px",
-      data: { prescriptionId: 1 },
+      data: { prescriptionId: this._route.snapshot.paramMap.get("id") },
     });
   }
 }

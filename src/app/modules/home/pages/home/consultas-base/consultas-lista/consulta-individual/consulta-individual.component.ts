@@ -48,30 +48,34 @@ export class ConsultaIndividualComponent implements OnInit {
   }
 
   enviarMensaje(doctorSpecialtyId: number) {
-    // this.imageName = "";
-    // console.log(this.selectedFile);
-    // const uploadImageData = new FormData();
+    this.imageName = "";
+    console.log(this.selectedFile);
+    const uploadImageData = new FormData();
+    uploadImageData.append(
+      "imageFile",
+      this.selectedFile,
+      this.selectedFile.name
+    );
+    this.httpClient
+      .post("http://localhost:8008/api/v1/chat/image/upload", uploadImageData, {
+        observe: "response",
+      })
+      .subscribe((response) => {
+        if (response.status === 200) {
+          this.message = "Image uploaded successfully";
+        } else {
+          this.message = "Image not uploaded successfully";
+        }
+      });
 
-    // this.httpClient;
-    // // .post("http://localhost:8080/image/upload", uploadImageData, {
-    // //   observe: "response",
-    // // })
-    // // .subscribe((response) => {
-    // //   if (response.status === 200) {
-    // //     this.message = "Image uploaded successfully";
-    // //   } else {
-    // //     this.message = "Image not uploaded successfully";
-    // //   }
-    // // });
-
-    this.mensajeChat = {
-      consultId: this._route.snapshot.paramMap.get("id"),
-      message: this.mensaje,
-    };
-    this._serviceMessage
-      .sendMenssage(this.mensajeChat)
-      .subscribe((data: any) => console.log(data));
-    this.mensaje = "";
-    window.location.reload();
+    // this.mensajeChat = {
+    //   consultId: this._route.snapshot.paramMap.get("id"),
+    //   message: this.mensaje,
+    // };
+    // this._serviceMessage
+    //   .sendMenssage(this.mensajeChat)
+    //   .subscribe((data: any) => console.log(data));
+    // this.mensaje = "";
+    // window.location.reload();
   }
 }

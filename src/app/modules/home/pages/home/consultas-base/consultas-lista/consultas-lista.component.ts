@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { MatDialog } from "@angular/material";
+import { MatDialog, MatDialogRef } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ConsultasService } from "src/app/core/http/services/consultas.service";
 import { Consults } from "src/app/models/Consults";

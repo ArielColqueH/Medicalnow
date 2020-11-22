@@ -45,6 +45,7 @@ import { ListaEspecialidadesGratuitasComponent } from "./pages/home/asistencia-b
 import { ListaEspecialistasGratisComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades-gratuitas/lista-especialistas-gratis/lista-especialistas-gratis.component";
 import { HistorialHojasComponent } from "./pages/home/historial-base/historial-lista/historial-hojas/historial-hojas.component";
 import { HistorialCompletoComponent } from "./pages/home/historial-base/historial-lista/historial-hojas/historial-completo/historial-completo.component";
+import { DarPuntuacionComponent } from "../dialogs/dar-puntuacion/dar-puntuacion.component";
 
 @NgModule({
   declarations: [
