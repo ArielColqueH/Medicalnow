@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ChatArchivoService } from "src/app/core/http/services/chat-archivo.service";
 import { ChatMensajeService } from "src/app/core/http/services/chat-mensaje.service";
 import { ChatPacienteService } from "src/app/core/http/services/chat-paciente.service";
+import { ObtenerImagenService } from "src/app/core/http/services/obtener-imagen.service";
 import { ChatPacienteJson } from "src/app/models/ChatPacienteJson";
 import { MessageModel } from "src/app/models/MessageModel";
 
@@ -30,6 +31,7 @@ export class ConsultaIndividualComponent implements OnInit {
     private _service: ChatPacienteService,
     private _serviceMessage: ChatMensajeService,
     private _serviceFile: ChatArchivoService,
+    private _servicegetFile: ObtenerImagenService,
     private _route: ActivatedRoute,
     private httpClient: HttpClient
   ) {}
@@ -94,12 +96,10 @@ export class ConsultaIndividualComponent implements OnInit {
   }
 
   getImage() {
-    this.httpClient
-      .get("http://localhost:8008/api/v1/chat/image/get/" + "problemaPiel.jpg")
-      .subscribe((res) => {
-        this.retrieveResonse = res;
-        this.base64Data = this.retrieveResonse.picByte;
-        this.retrievedImage = "data:image/jpeg;base64," + this.base64Data;
-      });
+    this._servicegetFile.getImage().subscribe((res) => {
+      this.retrieveResonse = res;
+      this.base64Data = this.retrieveResonse.picByte;
+      this.retrievedImage = "data:image/jpeg;base64," + this.base64Data;
+    });
   }
 }
