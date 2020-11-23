@@ -37,7 +37,7 @@ export class CobroConsultaComponent implements OnInit {
       .subscribe((data) => (this.payment = data));
   }
   pagarConsulta() {
-    console.log("id:" + this.data.doctorSpecialtyId);
+    //console.log("id:" + this.data.doctorSpecialtyId);
     this.specialtyIdModel = {
       doctorSpecialtyId: this.data.doctorSpecialtyId,
     };
