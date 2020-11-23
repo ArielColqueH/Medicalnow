@@ -1,25 +1,35 @@
-import { Component, OnInit } from "@angular/core";
-import { MatDialogRef } from "@angular/material";
+import { Component, Inject, OnInit } from "@angular/core";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { StarRatingComponent } from "ng-starrating";
+import { DarPuntuacionService } from "src/app/core/http/services/dar-puntuacion.service";
+import { QualificationModel } from "src/app/models/qualification-model";
 @Component({
   selector: "app-dar-puntuacion",
   templateUrl: "./dar-puntuacion.component.html",
   styleUrls: ["./dar-puntuacion.component.scss"],
 })
 export class DarPuntuacionComponent implements OnInit {
-  constructor(private dialogRef: MatDialogRef<DarPuntuacionComponent>) {}
+  puntuacion = new QualificationModel();
+  aux = this.data.consultId;
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialogRef: MatDialogRef<DarPuntuacionComponent>,
+    private _service: DarPuntuacionService
+  ) {}
 
   ngOnInit() {}
+
   onRate($event: {
     oldValue: number;
     newValue: number;
     starRating: StarRatingComponent;
   }) {
     console.log("Puntuacion : " + $event.newValue);
-    // alert(`Old Value:${$event.oldValue},
-    //   New Value: ${$event.newValue},
-    //   Checked Color: ${$event.starRating.checkedcolor},
-    //   Unchecked Color: ${$event.starRating.uncheckedcolor}`);
+    this.puntuacion.qualification = $event.newValue;
+    this._service
+      .sendQualification(this.aux, this.puntuacion)
+      .subscribe((data: any) => console.log(data));
     this.dialogRef.close();
   }
 }

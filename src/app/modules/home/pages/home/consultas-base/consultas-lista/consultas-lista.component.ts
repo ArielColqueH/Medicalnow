@@ -39,6 +39,7 @@ export class ConsultasListaComponent implements OnInit {
   darPuntuacion(consultaId: number) {
     const dialogRef = this.dialog.open(DarPuntuacionComponent, {
       width: "600px",
+      data: { consultId: consultaId },
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);

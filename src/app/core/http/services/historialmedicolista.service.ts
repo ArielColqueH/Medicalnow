@@ -15,7 +15,7 @@ export class HistorialmedicolistaService {
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/medical_history/list/all/` +
+      `${config.apiUrl}/medical_history/patient/list/all/` +
         localStorage.getItem("userId"),
       {
         headers: reqHeader,

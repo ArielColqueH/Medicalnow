@@ -3,7 +3,7 @@ import { DiagnosisModel } from "./diagnosis-model";
 import { PacienteData } from "./paciente-data";
 
 export class HistorialMedico {
-  diagnosis: string;
+  diagnosis = new DiagnosisModel();
   patient_data = new PacienteData();
   prescriptionId: number[];
 }
