@@ -38,7 +38,7 @@ export class ConsultaIndividualComponent implements OnInit {
 
   ngOnInit() {
     this.ObtenerDatos();
-    this.getImage();
+    //this.getImage();
   }
 
   ObtenerDatos() {

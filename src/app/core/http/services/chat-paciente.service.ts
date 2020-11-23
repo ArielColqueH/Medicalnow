@@ -7,6 +7,7 @@ import { config } from "src/app/models/auth/config";
 })
 export class ChatPacienteService {
   constructor(private _http: HttpClient) {}
+
   listChat(consultId: string) {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
@@ -18,6 +19,5 @@ export class ChatPacienteService {
         headers: reqHeader,
       }
     );
-    //id de la consulta
   }
 }
