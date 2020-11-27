@@ -22,4 +22,16 @@ export class SpecialtiesService {
     //   .get<any>(`${config.apiUrl}/specialties`)
     //   .pipe(map((data) => data.value));
   }
+  listaSpecialityFree() {
+    var tokenUser = localStorage.getItem("JWT_TOKEN");
+    const reqHeader = new HttpHeaders({
+      Authorization: "bearer " + tokenUser,
+    });
+    return this._http.get<any>(`${config.apiUrl}/specialties/free`, {
+      headers: reqHeader,
+    });
+    // return this._http
+    //   .get<any>(`${config.apiUrl}/specialties`)
+    //   .pipe(map((data) => data.value));
+  }
 }

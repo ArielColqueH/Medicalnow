@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { ActivatedRoute, Router } from "@angular/router";
 import { StarRatingComponent } from "ng-starrating";
 import { DarPuntuacionService } from "src/app/core/http/services/dar-puntuacion.service";
 import { QualificationModel } from "src/app/models/qualification-model";
@@ -15,7 +16,9 @@ export class DarPuntuacionComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<DarPuntuacionComponent>,
-    private _service: DarPuntuacionService
+    private _service: DarPuntuacionService,
+    private _router: Router,
+    private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {}
@@ -29,7 +32,7 @@ export class DarPuntuacionComponent implements OnInit {
     this.puntuacion.qualification = $event.newValue;
     this._service
       .sendQualification(this.aux, this.puntuacion)
-      .subscribe((data: any) => console.log(data));
+      .subscribe((data: any) => window.location.reload());
     this.dialogRef.close();
   }
 }

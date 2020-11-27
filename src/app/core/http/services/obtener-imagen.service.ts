@@ -13,11 +13,8 @@ export class ObtenerImagenService {
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
-    return this._http.get<any>(
-      `${config.apiUrl}/chat/image/get/` + `alergias.png`,
-      {
-        headers: reqHeader,
-      }
-    );
+    return this._http.get<any>(`${config.apiUrl}/chat/get/` + `bual4.jpg`, {
+      headers: reqHeader,
+    });
   }
 }

@@ -26,9 +26,8 @@ export class ListaEspecialidadesGratuitasComponent implements OnInit {
 
   ObtenerDatos() {
     this._service
-      .listaSpeciality()
+      .listaSpecialityFree()
       .subscribe((data) => (this.listaEspecialidades = data));
-    //this.aux = this.listaEspecialidades;
   }
 
   irListaEspecialistas(id: number) {

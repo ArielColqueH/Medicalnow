@@ -9,13 +9,13 @@ import { MessageModel } from "src/app/models/MessageModel";
 export class ChatArchivoService {
   constructor(private _http: HttpClient) {}
 
-  sendFile(uploadImageData: any) {
+  sendFile(uploadImageData: any, consultId: string) {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
     return this._http.post<any>(
-      `${config.apiUrl}/chat/image/upload`,
+      `${config.apiUrl}/chat/` + consultId + `/image/upload`,
       uploadImageData,
       {
         headers: reqHeader,

@@ -23,18 +23,23 @@ export class UserConfigurationService {
     );
   }
 
-  public datosActualizadosFromRemote(user: UserConfigurationModel): Observable<any> {
+  public datosActualizadosFromRemote(
+    user: UserConfigurationModel
+  ): Observable<any> {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
-    return this._http.put(`${config.apiUrl}/user/` + localStorage.getItem("userId")+`/config/update`,
+    return this._http.post(
+      `${config.apiUrl}/user/` +
+        localStorage.getItem("userId") +
+        `/config/update`,
+      user,
       {
         headers: reqHeader,
-        user
       }
     );
   }
-}/*public conexionBackend(user: User):Observable<any>{
+} /*public conexionBackend(user: User):Observable<any>{
     return this._http.post<any>("http://localhost:8008/api/v1/user/registry",user);
   }*/

@@ -13,4 +13,9 @@ export class SpecialtieslistService {
     console.log("id : " + id);
     return this._http.get<any>(this.URL + "/" + id);
   }
+
+  listSpecialtiesFree(id: string) {
+    console.log("id : " + id);
+    return this._http.get<any>(this.URL + "/free/" + id);
+  }
 }

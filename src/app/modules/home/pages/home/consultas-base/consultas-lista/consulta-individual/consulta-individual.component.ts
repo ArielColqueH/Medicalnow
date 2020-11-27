@@ -38,7 +38,7 @@ export class ConsultaIndividualComponent implements OnInit {
 
   ngOnInit() {
     this.ObtenerDatos();
-    //this.getImage();
+    this.getImage();
   }
 
   ObtenerDatos() {
@@ -62,13 +62,17 @@ export class ConsultaIndividualComponent implements OnInit {
         this.selectedFile,
         this.selectedFile.name
       );
-      this._serviceFile.sendFile(uploadImageData).subscribe((response) => {
-        if (response.status === 200) {
-          this.message = "Image uploaded successfully";
-        } else {
-          this.message = "Image not uploaded successfully";
-        }
-      });
+      this._serviceFile
+        .sendFile(uploadImageData, this._route.snapshot.paramMap.get("id"))
+        .subscribe((response) => {
+          if (response.status === 200) {
+            this.message = "Image uploaded successfully";
+            alert(this.message);
+          } else {
+            this.message = "Image not uploaded successfully";
+            alert(this.message);
+          }
+        });
     } else {
       this.mensajeChat = {
         consultId: this._route.snapshot.paramMap.get("id"),
@@ -80,24 +84,13 @@ export class ConsultaIndividualComponent implements OnInit {
       this.mensaje = "";
     }
 
-    // this.httpClient
-    //   .post("http://localhost:8008/api/v1/chat/image/upload", uploadImageData, {
-    //     observe: "response",
-    //   })
-    //   .subscribe((response) => {
-    //     if (response.status === 200) {
-    //       this.message = "Image uploaded successfully";
-    //     } else {
-    //       this.message = "Image not uploaded successfully";
-    //     }
-    //   });
-
     window.location.reload();
   }
 
   getImage() {
     this._servicegetFile.getImage().subscribe((res) => {
       this.retrieveResonse = res;
+      console.log(this.retrieveResonse);
       this.base64Data = this.retrieveResonse.picByte;
       this.retrievedImage = "data:image/jpeg;base64," + this.base64Data;
     });

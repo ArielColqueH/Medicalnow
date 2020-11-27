@@ -25,11 +25,6 @@ export class MiniChatComponent implements OnInit {
     this.ObtenerDatos();
   }
 
-  // ObtenerDatos() {
-  //   this._service
-  //     .listChat(this._route.snapshot.paramMap.get("id"))
-  //     .subscribe((data) => (this.chat = data));
-  // }
   ObtenerDatos() {
     this._service.listChat(this.aux).subscribe((data) => (this.chat = data));
   }

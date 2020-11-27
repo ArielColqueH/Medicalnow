@@ -32,7 +32,7 @@ export class ListaEspecialistasGratisComponent implements OnInit {
 
   ObtenerDatos() {
     this._service
-      .listSpecialties(this._route.snapshot.paramMap.get("id"))
+      .listSpecialtiesFree(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.listaEspecialista = data));
   }
   enviarMensaje() {
