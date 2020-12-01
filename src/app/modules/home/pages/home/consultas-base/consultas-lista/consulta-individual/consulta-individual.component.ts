@@ -16,9 +16,9 @@ import { MessageModel } from "src/app/models/MessageModel";
 })
 export class ConsultaIndividualComponent implements OnInit {
   selectedFile: File;
-  retrievedImage: any;
-  base64Data: any;
-  retrieveResonse: any;
+  retrievedImage: any[] = [];
+  base64Data: any[] = [];
+  retrieveResonse: any[] = [];
   message: string;
   imageName: string;
 
@@ -91,8 +91,10 @@ export class ConsultaIndividualComponent implements OnInit {
     this._servicegetFile.getImage().subscribe((res) => {
       this.retrieveResonse = res;
       console.log(this.retrieveResonse);
-      this.base64Data = this.retrieveResonse.picByte;
-      this.retrievedImage = "data:image/jpeg;base64," + this.base64Data;
+      for (let i = 0; i < this.retrieveResonse.length; i++) {
+        this.base64Data[i] = this.retrieveResonse[i].picByte;
+        this.retrievedImage[i] = "data:image/jpeg;base64," + this.base64Data[i];
+      }
     });
   }
 }

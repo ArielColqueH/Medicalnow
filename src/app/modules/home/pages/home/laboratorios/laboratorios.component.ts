@@ -11,29 +11,24 @@ import { ListEspecialist } from "src/app/models/ListaEspecialista";
   styleUrls: ["./laboratorios.component.scss"],
 })
 export class LaboratoriosComponent implements OnInit {
-  listlaboratory: Laboratory[];
+  //listlaboratory: Laboratory[];
 
-  /*laboratoryList: Laboratory[] = [
+  listlaboratory: Laboratory[] = [
     {
-      laboratoryId: 1,
-      laboratoryName: "Electrocardiograma",
-      laboratoryDoctor: "Tony Stark",
-      laboratoryDoctorSpecialist: "Cardiologo",
-      laboratoryDate: "11/12/2020",
+      laboratoryId: "1",
+      laboratoryName: "Radiografia",
+      firstName: "Mariana",
+      firstSurname: "Cardozo",
+      secondSurname: "Costa",
+      specialtyName: "Alergologia",
+      orderDate: "28/11/2020",
     },
-    {
-      laboratoryId: 2,
-      laboratoryName: "Analisis",
-      laboratoryDoctor: "Rey richards",
-      laboratoryDoctorSpecialist: "Dentista",
-      laboratoryDate: "15/12/2020",
-    },
-  ];*/
+  ];
 
   constructor(private _service: LaboratoryService, private _router: Router) {}
 
   ngOnInit() {
-    this.ObtenerDatos();
+    //this.ObtenerDatos();
   }
 
   ObtenerDatos() {
