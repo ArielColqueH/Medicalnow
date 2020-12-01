@@ -26,9 +26,12 @@ export class VerImagenesComponent implements OnInit {
     this._servicegetFile.getImage(this.aux).subscribe((res) => {
       this.retrieveResonse = res;
       console.log(this.retrieveResonse);
-      for (let i = 0; i < this.retrieveResonse.length; i++) {
-        this.base64Data[i] = this.retrieveResonse[i].picByte;
-        this.retrievedImage[i] = "data:image/jpeg;base64," + this.base64Data[i];
+      if (this.retrieveResonse.length != 0) {
+        for (let i = 0; i < this.retrieveResonse.length; i++) {
+          this.base64Data[i] = this.retrieveResonse[i].picByte;
+          this.retrievedImage[i] =
+            "data:image/jpeg;base64," + this.base64Data[i];
+        }
       }
     });
   }

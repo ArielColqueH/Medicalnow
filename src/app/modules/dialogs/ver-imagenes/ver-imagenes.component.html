@@ -20,8 +20,15 @@
             </div>
           </div>
         </div>
-      </div></div
-  ></mat-dialog-content>
+      </div>
+    </div>
+    <div
+      class="u__flex--center title__text--no-exist"
+      *ngIf="retrievedImage.length == 0"
+    >
+      No existen imagenes
+    </div></mat-dialog-content
+  >
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancelar</button>
   </mat-dialog-actions>
