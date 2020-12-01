@@ -8,6 +8,7 @@ import { ChatPacienteService } from "src/app/core/http/services/chat-paciente.se
 import { ObtenerImagenService } from "src/app/core/http/services/obtener-imagen.service";
 import { ChatPacienteJson } from "src/app/models/ChatPacienteJson";
 import { MessageModel } from "src/app/models/MessageModel";
+import { VerImagenesComponent } from "src/app/modules/dialogs/ver-imagenes/ver-imagenes.component";
 
 @Component({
   selector: "app-consulta-individual",
@@ -16,13 +17,14 @@ import { MessageModel } from "src/app/models/MessageModel";
 })
 export class ConsultaIndividualComponent implements OnInit {
   selectedFile: File;
-  retrievedImage: any[] = [];
-  base64Data: any[] = [];
-  retrieveResonse: any[] = [];
+  // retrievedImage: any[] = [];
+  // base64Data: any[] = [];
+  // retrieveResonse: any[] = [];
   message: string;
   imageName: string;
 
   mensaje: string = "";
+  consultId: string = this._route.snapshot.paramMap.get("id");
 
   chat = new ChatPacienteJson();
   mensajeChat = new MessageModel();
@@ -38,7 +40,6 @@ export class ConsultaIndividualComponent implements OnInit {
 
   ngOnInit() {
     this.ObtenerDatos();
-    this.getImage();
   }
 
   ObtenerDatos() {
@@ -87,14 +88,22 @@ export class ConsultaIndividualComponent implements OnInit {
     window.location.reload();
   }
 
-  getImage() {
-    this._servicegetFile.getImage().subscribe((res) => {
-      this.retrieveResonse = res;
-      console.log(this.retrieveResonse);
-      for (let i = 0; i < this.retrieveResonse.length; i++) {
-        this.base64Data[i] = this.retrieveResonse[i].picByte;
-        this.retrievedImage[i] = "data:image/jpeg;base64," + this.base64Data[i];
-      }
+  // getImage() {
+  //   this._servicegetFile.getImage().subscribe((res) => {
+  //     this.retrieveResonse = res;
+  //     console.log(this.retrieveResonse);
+  //     for (let i = 0; i < this.retrieveResonse.length; i++) {
+  //       this.base64Data[i] = this.retrieveResonse[i].picByte;
+  //       this.retrievedImage[i] = "data:image/jpeg;base64," + this.base64Data[i];
+  //     }
+  //   });
+  // }
+  verImagenes() {
+    const dialogRef = this.dialog.open(VerImagenesComponent, {
+      width: "1000px",
+      data: {
+        prescriptionId: this.consultId,
+      },
     });
   }
 }

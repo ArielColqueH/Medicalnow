@@ -17,13 +17,24 @@
       accept=".png,.jpg"
       (change)="onFileChanged($event)"
     />
-    <button (click)="csvInput.click()" mat-fab class="circle-button--primary">
+    <button
+      (click)="verImagenes()"
+      mat-fab
+      class="circle-button--primary circle-button__chat"
+    >
+      <mat-icon>photo_library</mat-icon>
+    </button>
+    <button
+      (click)="csvInput.click()"
+      mat-fab
+      class="circle-button--primary circle-button__chat"
+    >
       <mat-icon>attachment</mat-icon>
     </button>
     <button
       (click)="enviarMensaje(chat.doctorInfo.doctorSpecialtyId)"
       mat-fab
-      class="circle-button--primary"
+      class="circle-button--primary circle-button__chat"
     >
       <mat-icon>send</mat-icon>
     </button>
@@ -68,7 +79,7 @@
       </ng-template>
     </div>
   </div>
-  <div *ngIf="retrievedImage.length != 0">
+  <!-- <div *ngIf="retrievedImage.length != 0">
     <div class="" *ngFor="let item of retrievedImage">
       <div class="card-historial-completo__chat--paciente">
         <div class="card-historial-completo__chat">
@@ -82,5 +93,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

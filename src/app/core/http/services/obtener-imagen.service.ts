@@ -8,13 +8,17 @@ import { config } from "src/app/models/auth/config";
 export class ObtenerImagenService {
   constructor(private _http: HttpClient) {}
 
-  getImage() {
+  getImage(consultId: string) {
+    console.log("consult id :" + consultId);
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
-    return this._http.get<any>(`${config.apiUrl}/chat/` + 2 + `/get/images`, {
-      headers: reqHeader,
-    });
+    return this._http.get<any>(
+      `${config.apiUrl}/chat/` + consultId + `/get/images`,
+      {
+        headers: reqHeader,
+      }
+    );
   }
 }

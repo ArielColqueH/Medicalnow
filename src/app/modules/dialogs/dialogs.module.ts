@@ -11,6 +11,7 @@ import { ConsultaGratisComponent } from "./consulta-gratis/consulta-gratis.compo
 import { DarPuntuacionComponent } from "./dar-puntuacion/dar-puntuacion.component";
 import { RatingModule } from "ng-starrating";
 import { MiniChatComponent } from "./mini-chat/mini-chat.component";
+import { VerImagenesComponent } from "./ver-imagenes/ver-imagenes.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MiniChatComponent } from "./mini-chat/mini-chat.component";
     ConsultaGratisComponent,
     DarPuntuacionComponent,
     MiniChatComponent,
+    VerImagenesComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { MiniChatComponent } from "./mini-chat/mini-chat.component";
     ConsultaGratisComponent,
     DarPuntuacionComponent,
     MiniChatComponent,
+    VerImagenesComponent,
   ],
 })
 export class DialogsModule {}

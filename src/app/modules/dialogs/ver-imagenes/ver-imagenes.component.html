@@ -1,0 +1,28 @@
+<div class="dialog__container">
+  <div class="dialog__subtitle">
+    <div class="dialog__subtitle-content">
+      <div class="dialog__subtitle-text">Imagenes de consulta #{{ aux }}</div>
+      <div class="dialog__subtitle-button"></div>
+    </div>
+    <div class="dialog__subtitle-line"></div>
+  </div>
+  <mat-dialog-content
+    ><div *ngIf="retrievedImage.length != 0">
+      <div class="" *ngFor="let item of retrievedImage">
+        <div class="card-historial-completo__chat--paciente">
+          <div class="card-historial-completo__chat">
+            <div class="card-historial-completo__usuario">Paciente</div>
+            <span class="card-historial-completo__informacion--subtitulo">
+              Mensaje :
+            </span>
+            <div class="card-historial-completo__informacion--image">
+              <img [src]="item" class="card-historial-completo__image" />
+            </div>
+          </div>
+        </div>
+      </div></div
+  ></mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</div>
