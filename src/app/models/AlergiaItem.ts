@@ -1,3 +1,3 @@
 export class AlergiaItem {
-  nombreAlergia: string;
+  description: string;
 }

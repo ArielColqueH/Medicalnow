@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="card-historial-completo__titulo">* Datos de paciente</div>
-  <div class="card-historial-completo__container">
+  <div class="card-historial-completo__container mb-3">
     <div class="card-historial-completo__informacion">
       <div class="card-historial-completo__informacion--subtitulo">
         Nombre Completo :
@@ -42,6 +42,117 @@
       </div>
     </div>
   </div>
+  <div class="card-datos-medicos__container">
+    <div class="" fxLayout="row">
+      <div class="card-datos-medicos__columna" fxFlex="33.3">
+        <div class="card-datos-medicos__subtitulo-compuesto">
+          <div class="card-datos-medicos__subtitulo-button">Datos</div>
+        </div>
+        <form>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">Peso :</div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Peso</mat-label>
+                <input
+                  id="peso"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 85"
+                  [(ngModel)]="medicalDataModel.weight"
+                  name="peso"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">Kg</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Altura :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Altura</mat-label>
+                <input
+                  id="altura"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 180"
+                  [(ngModel)]="medicalDataModel.height"
+                  name="altura"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">cm</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Temperatura :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Temperatura</mat-label>
+                <input
+                  id="gradosC"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 40"
+                  [(ngModel)]="medicalDataModel.temperature"
+                  name="gradosC"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">ºC</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Presion :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field class="modal-container__inputs--width">
+                <mat-label>Ingrese su Presion</mat-label>
+                <input
+                  id="presion"
+                  class="input-form"
+                  matInput
+                  placeholder="Ejem 40"
+                  [(ngModel)]="medicalDataModel.pressure"
+                  name="presion"
+                />
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad">mmHg</div>
+          </div>
+          <div class="card-datos-medicos__informacion">
+            <div class="card-datos-medicos__informacion--subtitulo">
+              Grupo Sanguineo :
+            </div>
+            <div class="card-datos-medicos__informacion--titulo">
+              <mat-form-field
+                appearance="fill"
+                class="modal-container__inputs--width"
+              >
+                <mat-label>Grupo Sanguineo</mat-label>
+                <mat-select
+                  [(ngModel)]="medicalDataModel.bloodGroup"
+                  name="bloodGroup"
+                >
+                  <mat-option
+                    *ngFor="let item of grupoSanguineo"
+                    [value]="item"
+                  >
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="card-datos-medicos__informacion--unidad"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <div class="card-historial-completo__titulo">* Diagnostico</div>
   <div class="card-historial-completo__container">
     <div class="card-historial-completo__diagnostico">

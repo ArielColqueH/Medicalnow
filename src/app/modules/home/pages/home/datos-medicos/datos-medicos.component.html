@@ -159,7 +159,10 @@
             <mat-icon>add</mat-icon>
           </button>
         </div>
-        <div class="" *ngFor="let item of alergiasItems; let i = index">
+        <div
+          class=""
+          *ngFor="let item of descriptionModelAlergias.detail; let i = index"
+        >
           <div class="u__flex--space-between">
             <mat-form-field class="modal-container__inputs--width">
               <mat-label>Alergia</mat-label>
@@ -168,7 +171,7 @@
                 matInput
                 placeholder="alergia"
                 name="alergia{{ i }}"
-                [(ngModel)]="item.nombreAlergia"
+                [(ngModel)]="item.description"
               />
             </mat-form-field>
             <button
@@ -207,7 +210,10 @@
             <mat-icon>add</mat-icon>
           </button>
         </div>
-        <div class="" *ngFor="let item of enfermedadesItems; let i = index">
+        <div
+          class=""
+          *ngFor="let item of descriptionModelPrevios.detail; let i = index"
+        >
           <div class="u__flex--space-between">
             <mat-form-field class="modal-container__inputs--width">
               <mat-label>Diagnosticos Previos</mat-label>
@@ -216,7 +222,7 @@
                 matInput
                 placeholder="diagnosticos"
                 name="diagnosticos{{ i }}"
-                [(ngModel)]="item.nombreEnfermedad"
+                [(ngModel)]="item.description"
               />
             </mat-form-field>
             <button

@@ -4,6 +4,7 @@ import { DatosGeneralesPacienteService } from "src/app/core/http/services/datos-
 import { DatosMedicosService } from "src/app/core/http/services/datos-medicos.service";
 import { AlergiaItem } from "src/app/models/AlergiaItem";
 import { DatosMedicos } from "src/app/models/datos-medicos";
+import { DescriptionModel } from "src/app/models/description-model";
 import { EnfermedadItem } from "src/app/models/Enfermedaditem";
 import { MedicalDataModel } from "src/app/models/medical-data-model";
 
@@ -28,6 +29,9 @@ export class DatosMedicosComponent implements OnInit {
     "AB positivo",
   ];
 
+  descriptionModelAlergias = new DescriptionModel();
+  descriptionModelPrevios = new DescriptionModel();
+
   constructor(
     private _service: DatosMedicosService,
     private _router: Router,
@@ -37,6 +41,8 @@ export class DatosMedicosComponent implements OnInit {
 
   ngOnInit() {
     this.ObtenerDatosGenerales();
+    this.ObtenerDatosAlergias();
+    this.ObtenerDatosPrevios();
   }
 
   registerDatosMedicos() {
@@ -55,36 +61,56 @@ export class DatosMedicosComponent implements OnInit {
       .getDatosGenerales()
       .subscribe((data) => (this.medicalDataModel = data));
   }
+  ObtenerDatosAlergias() {
+    this._serviceDatosGenerales
+      .getDatosAlergias()
+      .subscribe((data) => (this.descriptionModelAlergias = data));
+  }
+  ObtenerDatosPrevios() {
+    this._serviceDatosGenerales
+      .getDatosPrevios()
+      .subscribe((data) => (this.descriptionModelPrevios = data));
+  }
 
   alergiasItems: AlergiaItem[] = [];
   enfermedadesItems: EnfermedadItem[] = [];
 
   agregarAlergias() {
     var alergiaAux = {
-      nombreAlergia: "",
+      description: "",
     };
-    this.alergiasItems.push(alergiaAux);
+    this.descriptionModelAlergias.detail.push(alergiaAux);
   }
   eliminarAlergia(alergiaId: number) {
-    this.alergiasItems.splice(alergiaId, 1);
+    this.descriptionModelAlergias.detail.splice(alergiaId, 1);
   }
   agregarDiagnosticos() {
     var diagnosticosAux = {
-      nombreEnfermedad: "",
+      description: "",
     };
-    this.enfermedadesItems.push(diagnosticosAux);
+    this.descriptionModelPrevios.detail.push(diagnosticosAux);
   }
   eliminarDiagnosticos(diagnosticoId: number) {
-    this.enfermedadesItems.splice(diagnosticoId, 1);
+    this.descriptionModelPrevios.detail.splice(diagnosticoId, 1);
   }
   guardarAlergias() {
-    this.alergiasItems.forEach((element) => {
-      console.log(element);
-    });
+    this._service.registerAlergiasData(this.descriptionModelAlergias).subscribe(
+      (data) => {
+        console.log("Datos actualizados");
+      },
+      (error) => {
+        console.log("exception ocurred");
+      }
+    );
   }
   guardarDiagnosticos() {
-    for (var i = 0; i < this.enfermedadesItems.length; i++) {
-      console.log(this.enfermedadesItems[i]);
-    }
+    this._service.registerPreviosData(this.descriptionModelPrevios).subscribe(
+      (data) => {
+        console.log("Datos actualizados");
+      },
+      (error) => {
+        console.log("exception ocurred");
+      }
+    );
   }
 }

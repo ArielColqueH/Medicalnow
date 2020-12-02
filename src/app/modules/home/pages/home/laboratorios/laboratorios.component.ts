@@ -14,21 +14,21 @@ export class LaboratoriosComponent implements OnInit {
   //listlaboratory: Laboratory[];
 
   listlaboratory: Laboratory[] = [
-    {
-      laboratoryId: "1",
-      laboratoryName: "Radiografia",
-      firstName: "Mariana",
-      firstSurname: "Cardozo",
-      secondSurname: "Costa",
-      specialtyName: "Alergologia",
-      orderDate: "28/11/2020",
-    },
+    // {
+    //   laboratoryId: "1",
+    //   laboratoryName: "Radiografia",
+    //   firstName: "Mariana",
+    //   firstSurname: "Cardozo",
+    //   secondSurname: "Costa",
+    //   specialtyName: "Alergologia",
+    //   orderDate: "28/11/2020",
+    // },
   ];
 
   constructor(private _service: LaboratoryService, private _router: Router) {}
 
   ngOnInit() {
-    //this.ObtenerDatos();
+    this.ObtenerDatos();
   }
 
   ObtenerDatos() {

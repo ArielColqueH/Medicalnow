@@ -20,4 +20,30 @@ export class DatosGeneralesPacienteService {
       }
     );
   }
+
+  getDatosAlergias() {
+    var tokenUser = localStorage.getItem("JWT_TOKEN");
+    const reqHeader = new HttpHeaders({
+      Authorization: "bearer " + tokenUser,
+    });
+    return this._http.get<any>(
+      `${config.apiUrl}/user/` + localStorage.getItem("userId") + "/allergies",
+      {
+        headers: reqHeader,
+      }
+    );
+  }
+
+  getDatosPrevios() {
+    var tokenUser = localStorage.getItem("JWT_TOKEN");
+    const reqHeader = new HttpHeaders({
+      Authorization: "bearer " + tokenUser,
+    });
+    return this._http.get<any>(
+      `${config.apiUrl}/user/` + localStorage.getItem("userId") + "/background",
+      {
+        headers: reqHeader,
+      }
+    );
+  }
 }
