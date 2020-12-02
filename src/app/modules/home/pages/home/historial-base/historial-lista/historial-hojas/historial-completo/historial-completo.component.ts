@@ -4,6 +4,7 @@ import { MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { DatosGeneralesPacienteService } from "src/app/core/http/services/datos-generales-paciente.service";
 import { HistorialmedicoService } from "src/app/core/http/services/historialmedico.service";
+import { DescriptionModel } from "src/app/models/description-model";
 import { HistorialMedico } from "src/app/models/historial-medico";
 import { MedicalDataModel } from "src/app/models/medical-data-model";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
@@ -27,6 +28,8 @@ export class HistorialCompletoComponent implements OnInit {
     "AB negativo",
     "AB positivo",
   ];
+  descriptionModelAlergias = new DescriptionModel();
+  descriptionModelPrevios = new DescriptionModel();
   constructor(
     private _service: HistorialmedicoService,
     public dialog: MatDialog,
@@ -38,6 +41,8 @@ export class HistorialCompletoComponent implements OnInit {
   ngOnInit() {
     this.ObtenerDatos();
     this.ObtenerDatosGenerales();
+    this.ObtenerDatosAlergias();
+    this.ObtenerDatosPrevios();
   }
 
   ObtenerDatos() {
@@ -66,5 +71,15 @@ export class HistorialCompletoComponent implements OnInit {
     this._serviceDatosGenerales
       .getDatosGenerales()
       .subscribe((data) => (this.medicalDataModel = data));
+  }
+  ObtenerDatosAlergias() {
+    this._serviceDatosGenerales
+      .getDatosAlergias()
+      .subscribe((data) => (this.descriptionModelAlergias = data));
+  }
+  ObtenerDatosPrevios() {
+    this._serviceDatosGenerales
+      .getDatosPrevios()
+      .subscribe((data) => (this.descriptionModelPrevios = data));
   }
 }

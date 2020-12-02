@@ -150,6 +150,53 @@
           </div>
         </form>
       </div>
+
+      <div class="card-datos-medicos__columna" fxFlex="33.3">
+        <div class="card-datos-medicos__subtitulo-compuesto">
+          <div class="card-datos-medicos__subtitulo-button">Alergias</div>
+        </div>
+        <div
+          class=""
+          *ngFor="let item of descriptionModelAlergias.detail; let i = index"
+        >
+          <div class="u__flex--space-between">
+            <mat-form-field class="modal-container__inputs--width">
+              <mat-label>Alergia</mat-label>
+              <input
+                class="input-form"
+                matInput
+                placeholder="alergia"
+                name="alergia{{ i }}"
+                [(ngModel)]="item.description"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="card-datos-medicos__columna" fxFlex="33.3">
+        <div class="card-datos-medicos__subtitulo-compuesto">
+          <div class="card-datos-medicos__subtitulo-button">
+            Diagnosticos Previos
+          </div>
+        </div>
+        <div
+          class=""
+          *ngFor="let item of descriptionModelPrevios.detail; let i = index"
+        >
+          <div class="u__flex--space-between">
+            <mat-form-field class="modal-container__inputs--width">
+              <mat-label>Diagnosticos Previos</mat-label>
+              <input
+                class="input-form"
+                matInput
+                placeholder="diagnosticos"
+                name="diagnosticos{{ i }}"
+                [(ngModel)]="item.description"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
