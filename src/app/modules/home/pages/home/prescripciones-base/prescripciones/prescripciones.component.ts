@@ -50,6 +50,5 @@ export class PrescripcionesComponent implements OnInit {
     this._service
       .listPrescription()
       .subscribe((data) => (this.listPrescriptionItem = data));
-    //this.aux = this.listaEspecialidades;
   }
 }

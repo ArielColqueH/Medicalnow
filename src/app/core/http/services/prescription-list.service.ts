@@ -14,7 +14,7 @@ export class PrescriptionListService {
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/prescription/consults/` +
+      `${config.apiUrl}/prescription/patient/consults/` +
         localStorage.getItem("userId"),
       {
         headers: reqHeader,

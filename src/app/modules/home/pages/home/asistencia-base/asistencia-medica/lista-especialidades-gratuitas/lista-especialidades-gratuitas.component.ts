@@ -36,4 +36,6 @@ export class ListaEspecialidadesGratuitasComponent implements OnInit {
       relativeTo: this.route,
     });
   }
+
+  
 }
