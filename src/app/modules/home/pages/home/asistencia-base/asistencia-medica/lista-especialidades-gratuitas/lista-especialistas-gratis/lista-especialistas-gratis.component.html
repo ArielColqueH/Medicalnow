@@ -38,7 +38,7 @@
           <strong>GRATIS</strong>
         </div>
         <div class="card-lista-especialista__horario-atencion">
-          12:30 - 15:00
+          {{ fixhoursini(item.fromTime) }} {{ fixhoursini(item.toTime) }}
         </div>
 
         <div class="card-lista-especialista__puntuacion">
@@ -46,7 +46,7 @@
             star
           </mat-icon>
           <div class="card-lista-especialista__puntuacion--puntuacion">
-            {{ item.qualification }}
+            {{ fixqua(item.qualification) }}
           </div>
         </div>
         <div class="card-lista-especialista__button">

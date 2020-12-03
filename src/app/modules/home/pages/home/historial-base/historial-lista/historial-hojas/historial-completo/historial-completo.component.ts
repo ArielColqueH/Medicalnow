@@ -17,7 +17,7 @@ import { MiniChatComponent } from "src/app/modules/dialogs/mini-chat/mini-chat.c
 })
 export class HistorialCompletoComponent implements OnInit {
   historialMedico = new HistorialMedico();
-  medicalDataModel = new MedicalDataModel();
+  //medicalDataModel = new MedicalDataModel();
   grupoSanguineo: string[] = [
     "O negativo",
     "O positivo",
@@ -28,8 +28,8 @@ export class HistorialCompletoComponent implements OnInit {
     "AB negativo",
     "AB positivo",
   ];
-  descriptionModelAlergias = new DescriptionModel();
-  descriptionModelPrevios = new DescriptionModel();
+  //descriptionModelAlergias = new DescriptionModel();
+  //descriptionModelPrevios = new DescriptionModel();
   constructor(
     private _service: HistorialmedicoService,
     public dialog: MatDialog,
@@ -40,9 +40,6 @@ export class HistorialCompletoComponent implements OnInit {
 
   ngOnInit() {
     this.ObtenerDatos();
-    this.ObtenerDatosGenerales();
-    this.ObtenerDatosAlergias();
-    this.ObtenerDatosPrevios();
   }
 
   ObtenerDatos() {
@@ -65,21 +62,5 @@ export class HistorialCompletoComponent implements OnInit {
       width: "600px",
       data: { prescriptionId: this._route.snapshot.paramMap.get("id") },
     });
-  }
-
-  ObtenerDatosGenerales() {
-    this._serviceDatosGenerales
-      .getDatosGenerales()
-      .subscribe((data) => (this.medicalDataModel = data));
-  }
-  ObtenerDatosAlergias() {
-    this._serviceDatosGenerales
-      .getDatosAlergias()
-      .subscribe((data) => (this.descriptionModelAlergias = data));
-  }
-  ObtenerDatosPrevios() {
-    this._serviceDatosGenerales
-      .getDatosPrevios()
-      .subscribe((data) => (this.descriptionModelPrevios = data));
   }
 }

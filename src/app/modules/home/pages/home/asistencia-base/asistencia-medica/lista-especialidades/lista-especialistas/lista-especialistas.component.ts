@@ -61,4 +61,9 @@ export class ListaEspecialistasComponent implements OnInit {
     var horaModi = splitted[0] + ":" + splitted[1];
     return horaModi;
   }
+  fixqua(puntuacion: string) {
+    var num = Number(puntuacion);
+    var res = (Math.round(num * 100) / 100).toFixed(2);
+    return res;
+  }
 }

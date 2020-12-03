@@ -59,7 +59,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 85"
-                  [(ngModel)]="medicalDataModel.weight"
+                  [(ngModel)]="historialMedico.medical_data.weight"
                   name="peso"
                 />
               </mat-form-field>
@@ -78,7 +78,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 180"
-                  [(ngModel)]="medicalDataModel.height"
+                  [(ngModel)]="historialMedico.medical_data.height"
                   name="altura"
                 />
               </mat-form-field>
@@ -97,7 +97,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 40"
-                  [(ngModel)]="medicalDataModel.temperature"
+                  [(ngModel)]="historialMedico.medical_data.temperature"
                   name="gradosC"
                 />
               </mat-form-field>
@@ -116,7 +116,7 @@
                   class="input-form"
                   matInput
                   placeholder="Ejem 40"
-                  [(ngModel)]="medicalDataModel.pressure"
+                  [(ngModel)]="historialMedico.medical_data.pressure"
                   name="presion"
                 />
               </mat-form-field>
@@ -134,7 +134,7 @@
               >
                 <mat-label>Grupo Sanguineo</mat-label>
                 <mat-select
-                  [(ngModel)]="medicalDataModel.bloodGroup"
+                  [(ngModel)]="historialMedico.medical_data.bloodGroup"
                   name="bloodGroup"
                 >
                   <mat-option
@@ -157,7 +157,7 @@
         </div>
         <div
           class=""
-          *ngFor="let item of descriptionModelAlergias.detail; let i = index"
+          *ngFor="let item of historialMedico.allergies.detail; let i = index"
         >
           <div class="u__flex--space-between">
             <mat-form-field class="modal-container__inputs--width">
@@ -181,7 +181,7 @@
         </div>
         <div
           class=""
-          *ngFor="let item of descriptionModelPrevios.detail; let i = index"
+          *ngFor="let item of historialMedico.background.detail; let i = index"
         >
           <div class="u__flex--space-between">
             <mat-form-field class="modal-container__inputs--width">

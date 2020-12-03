@@ -52,4 +52,16 @@ export class ListaEspecialistasGratisComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  fixhoursini(hora: string) {
+    var splitted = hora.split(":", 3);
+    //console.log(splitted);
+    //console.log(  "sndjnsc");
+    var horaModi = splitted[0] + ":" + splitted[1];
+    return horaModi;
+  }
+  fixqua(puntuacion: string) {
+    var num = Number(puntuacion);
+    var res = (Math.round(num * 100) / 100).toFixed(2);
+    return res;
+  }
 }
